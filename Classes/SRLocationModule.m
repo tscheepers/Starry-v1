@@ -110,7 +110,7 @@
 	
 	for (SRInterfaceElement* mElement in elements) {
 		if([mElement identifier] == @"text-transparent") {
-			glColor4f(0.4f, 0.4f, 0.4f, alphaValue);
+			glColor4f(0.68f, 0.68f, 0.68f, alphaValue);
 			[[mElement texture] drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
@@ -136,7 +136,7 @@
 				}
 				
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i'%i\" %@",degrees,minutes,seconds,northOrSouth] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-				glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
+				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 				[texture drawInRect:[mElement bounds]];
 				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];
@@ -176,7 +176,7 @@
 			
 															
 				Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%i°%i'%i\" %@",degrees,minutes,seconds,westOrEast] dimensions:CGSizeMake(80,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
-				glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
+				glColor4f(1.0f, 1.0f, 1.0f, alphaValue);
 				[texture drawInRect:[mElement bounds]];
 				glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 				[texture release];

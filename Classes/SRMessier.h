@@ -30,5 +30,6 @@
 @property (nonatomic, retain) NSString* type;
 
 -(Vertex3D)myCurrentPosition;
+-(BOOL)visibleWithZoom:(float)zoomf;
 
 @end

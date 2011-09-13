@@ -233,22 +233,17 @@
 														   clickable:YES]];
 	
 	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(116, -56, 41, 31)  
-															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"planeticon.png"]]
-														  identifier:@"planet" 
-														   clickable:YES]];
-	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(168, -56, 41, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"gears.png"]] 
 														  identifier:@"settings" 
 														   clickable:YES]];
-	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(223, -56, 196, 31)  
+    
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(168, -56, 251, 31)  
 															 texture:[[Texture2D alloc] initWithImage:[UIImage imageNamed:@"search.png"]] 
 														  identifier:@"searchfield" 
 														   clickable:YES]];
 	
-	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(255, -65, 128, 32) 
-							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:13] 
+	[UIElements addObject:[[SRInterfaceElement alloc] initWithBounds:CGRectMake(198, -65, 190, 32) 
+							                                 texture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(190,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:13] 
 														  identifier:@"search_text" 
 														   clickable:NO]];    
 	
@@ -271,10 +266,6 @@
 	//locatie
 	locationModule = [[SRLocationModule alloc] initWithSRLocation:[renderer location]];
 	[modules addObject:locationModule];
-	
-	//planets
-	planetModule = [[SRPlanetModule alloc] init];
-	[modules addObject:planetModule];
 	
 	//settings
 	settingsModule = [[SRSettingsModule alloc] init];
@@ -621,41 +612,19 @@
 			}
 			else {
 				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
-				[[UIElements objectAtIndex:4] setBounds:CGRectZero];
+				[[UIElements objectAtIndex:3] setBounds:CGRectZero];
 				[self hideAllModules];
 				[settingsModule show];
 				[self showSliderWith:@"fade"];
 				aModule = TRUE;
 			}
 		}
-		else if(clicker == @"planet") {
-			if([planetModule visible]) {
-				[planetModule hide];
-				[renderer setPlanetHighlighted:FALSE];
-				[renderer setSelectedPlanet:nil];
-				[renderer setObjectInFocus:nil]; 
-				[renderer setHighlight:FALSE];
-				aModule = TRUE;
-			}
-			else {
-				/* voordat je een nieuwe module laat zien moet je eerst een oude verbergen */
-				[[UIElements objectAtIndex:3] setBounds:CGRectZero];
-				[self hideAllModules];
-				[planetModule show];
-				aModule = TRUE;
-				[renderer setPlanetView:TRUE];
-				[theNameplate hide];
-				aNameplate = TRUE;
-				[camera setPlanetView:TRUE];
-				[camera resetZoomValue];
-			}
-		}
 		else if(clicker == @"searchfield" || clicker == @"search") {
 			currentlyEditingIdentifier = @"search";
-			[self bringUpTheKeyboardWithText:@"" onLocationX:10 Y:259 withColor:[UIColor blackColor] andSendResultsTo:self];
+			[self bringUpTheKeyboardWithText:@"" onLocationX:10 Y:204 withColor:[UIColor blackColor] andSendResultsTo:self];
 		}
 		else if(clicker == @"arrow") {
-			if ([timeModule visible] || [locationModule visible] || [settingsModule visible] || [planetModule visible]) {
+			if ([timeModule visible] || [locationModule visible] || [settingsModule visible]) {
 				if([timeModule visible]) {
 					[timeModule hide];	
 					[[UIElements objectAtIndex:2] setBounds:CGRectMake(63, -56, 41, 31)];
@@ -669,23 +638,8 @@
 				if([settingsModule visible]) {
 					[settingsModule hide];
 					[self hideSliderWith:@"fade"];
-					[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
-					aModule = TRUE;
-				}
-				if([planetModule visible]) {
-					[camera setPlanetView:FALSE];
-					[camera resetZoomValue];
-					[planetModule hide];
-					[[timeModule manager] setSpeed:1];
 					[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
 					aModule = TRUE;
-					[renderer setPlanetView:FALSE];
-					[renderer setSelectedStar:nil];
-					[renderer setPlanetHighlighted:FALSE];
-					[renderer setSelectedPlanet:nil];
-					[renderer setObjectInFocus:nil]; 
-					[renderer setHighlight:FALSE];
-					
 				}
 				
 				hidingMenu = FALSE;
@@ -711,11 +665,9 @@
 			[[timeModule manager] playPause];
 			if([[timeModule manager] playing]) {
 				[timeModule switchPlay:TRUE];
-				[planetModule switchPlay:TRUE];
 			}
 			else {
 				[timeModule switchPlay:FALSE];
-				[planetModule switchPlay:FALSE];
 			}
 		}
 		else if(clicker == @"stop") {
@@ -870,23 +822,8 @@
 			if([settingsModule visible]) {
 				[settingsModule hide];
 				[self hideSliderWith:@"fade"];
-				[[UIElements objectAtIndex:4] setBounds:CGRectMake(168, -56, 41, 31)];
-				aModule = TRUE;
-			}
-			if([planetModule visible]) {
-				[camera setPlanetView:FALSE];
-				[camera resetZoomValue];
-				[planetModule hide];
-				[[timeModule manager] setSpeed:1];
 				[[UIElements objectAtIndex:3] setBounds:CGRectMake(116, -56, 41, 31)];
 				aModule = TRUE;
-				[renderer setPlanetView:FALSE];
-				[renderer setSelectedStar:nil];
-				[renderer setPlanetHighlighted:FALSE];
-				[renderer setSelectedPlanet:nil];
-				[renderer setObjectInFocus:nil]; 
-				[renderer setHighlight:FALSE];
-				
 			}
 			
 			hidingMenu = FALSE;

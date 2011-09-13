@@ -89,7 +89,6 @@
 		AC59B8BA1075075F00ABAE22 /* SRPlanetaryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */; };
 		AC5B2F4A10E6C79500DE922B /* searchNo.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5B2F4810E6C79500DE922B /* searchNo.png */; };
 		AC5B2F4B10E6C79500DE922B /* searchYes.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5B2F4910E6C79500DE922B /* searchYes.png */; };
-		AC5B303C10E78A4F00DE922B /* SRPlanetModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5B303B10E78A4F00DE922B /* SRPlanetModule.m */; };
 		AC603F6410E0CF790017951C /* M42.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6110E0CF790017951C /* M42.png */; };
 		AC603F6510E0CF790017951C /* M43.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6210E0CF790017951C /* M43.png */; };
 		AC603F6C10E0D5920017951C /* M78.png in Resources */ = {isa = PBXBuildFile; fileRef = AC603F6B10E0D5920017951C /* M78.png */; };
@@ -368,8 +367,6 @@
 		AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetaryObject.m; sourceTree = "<group>"; };
 		AC5B2F4810E6C79500DE922B /* searchNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchNo.png; path = Resources/searchNo.png; sourceTree = "<group>"; };
 		AC5B2F4910E6C79500DE922B /* searchYes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchYes.png; path = Resources/searchYes.png; sourceTree = "<group>"; };
-		AC5B303A10E78A4F00DE922B /* SRPlanetModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetModule.h; sourceTree = "<group>"; };
-		AC5B303B10E78A4F00DE922B /* SRPlanetModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetModule.m; sourceTree = "<group>"; };
 		AC603F6110E0CF790017951C /* M42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M42.png; path = Resources/messier/M42.png; sourceTree = "<group>"; };
 		AC603F6210E0CF790017951C /* M43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M43.png; path = Resources/messier/M43.png; sourceTree = "<group>"; };
 		AC603F6B10E0D5920017951C /* M78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M78.png; path = Resources/messier/M78.png; sourceTree = "<group>"; };
@@ -768,8 +765,6 @@
 				7644565010C5837800AB935D /* SRSettingsModule.m */,
 				AC24C99310BAE8F00063DF87 /* SRTimeModule.h */,
 				AC24C99410BAE8F00063DF87 /* SRTimeModule.m */,
-				AC5B303A10E78A4F00DE922B /* SRPlanetModule.h */,
-				AC5B303B10E78A4F00DE922B /* SRPlanetModule.m */,
 				76B2988310BD9EBB00EEDA5D /* SRLocationModule.h */,
 				76B2988410BD9EBB00EEDA5D /* SRLocationModule.m */,
 			);
@@ -1326,7 +1321,6 @@
 				ACECC68E10CD9A8400CBE4AC /* SRMessier.m in Sources */,
 				AC89DDF910D035480083BFEA /* SRMessierInfo.m in Sources */,
 				ACCE96CB10E3EAFC0089EF62 /* Texture3D.m in Sources */,
-				AC5B303C10E78A4F00DE922B /* SRPlanetModule.m in Sources */,
 				AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */,
 				76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */,
 				ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */,
@@ -1369,6 +1363,7 @@
 					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Sterren;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1392,6 +1387,7 @@
 					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = Sterren;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

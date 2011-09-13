@@ -188,42 +188,10 @@
 	int x = [aTouch locationInView:theView].x;
 	int y = [aTouch locationInView:theView].y;
 	
-	// Aan de buitenste zeide is de destortion veel erger dan verder naar binnen.
-	//if (40 < y && y < 440 && 30 < x && x < 290) {
-	
-	//[objectManager clickedAtX:x Y:y];
-	
 	// Tenopzichte van het midden uitrekenen iPhone screen (iPadHeight*iPadWidth)
 	int deltaX = -x+(iPadWidth/2);
 	int deltaY = -y+(iPadHeight/2);
 	
-	
-	// Voor het testen zoom de camera daar heen
-	//[camera rotateCameraWithX:dmX 
-	//						Y:dmY];
-	
-	/*float readDECDeg = fmod(90+[camera calculateAltitudeWithX:dmX Y:dmY],180);
-	 
-	 float readRADeg = fmod([camera calculateAzimuthWithX:dmX Y:dmY],360);
-	 if (readRADeg < 0) {
-	 readRADeg = readRADeg + 360;
-	 }
-	 
-	 float readRARad = readRADeg * (M_PI/180);
-	 float readDECRad = (readDECDeg * (M_PI/180));
-	 //NSLog(@"RA/DEC punt RA:%f DEC:%f",azimuth,altitude);
-	 
-	 // Uit de php
-	 //$x = 20*sin($dec)*cos($ra);
-	 //$y = 20*sin($dec)*sin($ra);
-	 //$z = 20*cos($dec);
-	 //NSLog(@"Aangeklikt punt in graden RA:%f DEC:%f",readRADeg,readDECDeg);
-	 //NSLog(@"Aangeklikt punt in radialen RA:%f DEC:%f",readRARad,readDECRad);
-	 
-	 float brX = sin(readDECRad)*cos(readRARad);
-	 float brY = sin(readDECRad)*sin(readRARad);
-	 float brZ = cos(readDECRad);
-	 NSLog(@"Aangeklikte locatie op bol x:%f y:%f z:%f",brX,brY,brZ);*/
 	
 	float fieldOfView = [camera fieldOfView];
 	float altitude = [camera altitude];
@@ -238,14 +206,7 @@
 		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/4)));
 	else 
 		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
-	//}
-	//else {
-	//	radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/iPadWidth;
-	//NSLog(@"fieldofview:%f",fieldOfView);
-	//}
-	//float radPerPixel = sinf(0.5*(fieldOfView*iPadHeight)/iPadWidth)/iPadHeight;
-	//float standardHeight = 0.8910065242;
-	//float radPerPixel = (0.3*M_PI)/iPadWidth;
+	
 	// Coordinaten in het vlak
 	float fiX = deltaX * radPerPixel;
 	float fiY = deltaY * radPerPixel;
@@ -352,12 +313,7 @@
 		[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Sun", @"") inConstellation:NSLocalizedString(@"Our star", @"") showInfo:NO];
 		[[renderer interface] setANameplate:TRUE];
 		
-		//<<<<<<< HEAD:Classes/GLViewController.m
 		Vertex3D position = sun.position;
-		//Vertex3D position = Vector3DMake(sun.position.x, sun.position.y-0.2, sun.position.z);
-		//=======
-		//Vertex3D position = ;
-		//				Vertex3D position = Vector3DMake(sun.position.x, sun.position.y, sun.position.z);
 		
 		[renderer setHighlightPosition:position];
 		[renderer setObjectInFocus:sun];
@@ -377,16 +333,14 @@
 		if (moonD < (1.5 * (1/zoomingValue))) {
 			[[[renderer interface] theNameplate] setName:NSLocalizedString(@"Moon", @"") inConstellation:@"" showInfo:NO];
 			[[renderer interface] setANameplate:TRUE];
-			
-			//Vertex3D position = ;
+            
 			Vertex3D position = Vector3DMake(moon.position.x, moon.position.y, moon.position.z);
-			//>>>>>>> 5b467e71baa2e98bbb44915d597b1fbd5ff73140:Classes/GLViewController.m
 			
 			[renderer setHighlightPosition:position];
 			[renderer setObjectInFocus:moon];
 			[renderer setSelectedStar:nil];
 			[renderer setPlanetHighlighted:TRUE];
-			[renderer setSelectedPlanet:moon];
+			[renderer setSelectedPlanet:(SRPlanetaryObject*)moon];
 			[renderer setHighlightSize:32]; 
 			[renderer setHighlight:TRUE];
 		}
@@ -431,17 +385,19 @@
 				closestD = 18; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
 				SRMessier * aMessier;
 				SRMessier * closestMessier;
-				for(aMessier in [[[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
+				for(aMessier in [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager] messier]) {	
 					xd = aMessier.position.x-stX;
 					yd = aMessier.position.y-stY;
 					zd = aMessier.position.z-stZ;
 					messierD = sqrt(xd*xd + yd*yd + zd*zd);
-					if (messierD < closestD) {
-						closestD = messierD;
-						//NSLog(@"closestD: %f", closestD);
-						closestMessier = aMessier;
-						//NSLog(@"Closest messier:%@",closestMessier.name);
-					}						
+                    
+                    if ([aMessier visibleWithZoom:zoomingValue]) {
+                        
+                        if (messierD < closestD) {
+                            closestD = messierD;
+                            closestMessier = aMessier;
+                        } 
+                    }
 				}
 				//FIXME waarom zo'n raar getal?
 				if(closestD < (1.5 * (1/zoomingValue))) {
@@ -623,15 +579,6 @@
 						[renderer setHighlightSize:32]; 
 						[renderer setHighlight:TRUE];
 						
-						// CPU intensieve method
-						// Dit moet anders bijvoorbeeld met een selector texture op de x,y,z locatie in de renderer
-						/*SRStar * ster;
-						 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-						 ster.selected = NO;
-						 }
-						 closestStar.selected = YES;
-						 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-						 [renderer loadStarPoints];*/
 					}
 					else {
 						if ([[[renderer interface] theNameplate] visible]) {
@@ -643,12 +590,6 @@
 							[renderer setObjectInFocus:nil];
 							[[[renderer interface] theNameplate] hide];
 							[[renderer interface] setANameplate:TRUE];
-							/*SRStar * ster;
-							 for (ster in [[[[UIApplication sharedApplication] delegate] objectManager] stars]) {
-							 ster.selected = NO;
-							 }
-							 [[[[UIApplication sharedApplication] delegate] objectManager] buildStarData];
-							 [renderer loadStarPoints];*/
 							
 							
 						}

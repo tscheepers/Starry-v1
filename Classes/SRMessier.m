@@ -65,4 +65,8 @@
 	return result;
 }
 
+-(BOOL)visibleWithZoom:(float)zoomf {
+    return 1 - (1 / zoomf) > 0.2;
+}
+
 @end

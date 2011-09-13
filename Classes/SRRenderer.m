@@ -340,18 +340,15 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 					if(height > 20) {
 						bgConstant = 1.5;
 					}
-					else if(height < -20) {
-						bgConstant = 0;
-					}
 					else if(height > 0) {
 						bgConstant = (height / 14);
 					}
-					else if(height < 0) {
+					else if(height <= 0) {
 						bgConstant = 0;
 					}
 					
 	if(!planetView) {
-		glClearColor(0.05 + bgConstant * 0.03, 0.06 + bgConstant * 0.05, 0.12 + bgConstant * 0.30, 1.0);
+		glClearColor(0.05 + bgConstant * 0.01, 0.06 + bgConstant * 0.02, 0.12 + bgConstant * 0.10, 1.0);
 	}
 	else {
 		glClearColor(0.05, 0.06, 0.12, 1.0);
@@ -458,13 +455,13 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, textures[20]);
 
-	size = 24 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 32) { size = 32; }
+	size = 24 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 32 * [[UIScreen mainScreen] scale]) { size = 32 * [[UIScreen mainScreen] scale]; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, 0, [[starSizeNum objectAtIndex:0] intValue]);
 	
-	size = 12 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 16) { size = 16; }
+	size = 12 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 16 * [[UIScreen mainScreen] scale]) { size = 16 * [[UIScreen mainScreen] scale]; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue], [[starSizeNum objectAtIndex:1] intValue]);
 	
@@ -472,25 +469,25 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glDisable(GL_TEXTURE_2D);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
-	size = 1.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 3) { size = 3; }
+	size = 1.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 3 * [[UIScreen mainScreen] scale]) { size = 3 * [[UIScreen mainScreen] scale]; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue], [[starSizeNum objectAtIndex:2] intValue]);
 
-	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 3) { size = 3; }
+	size = 0.8 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 3 * [[UIScreen mainScreen] scale]) { size = 3 * [[UIScreen mainScreen] scale]; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue], [[starSizeNum objectAtIndex:3] intValue]);
 
-	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 3) { size = 3; }
+	size = 0.5 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 3 * [[UIScreen mainScreen] scale]) { size = 3 * [[UIScreen mainScreen] scale]; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue], [[starSizeNum objectAtIndex:4] intValue]);
 
-	size = 0.4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor];
-	if(size > 3) { size = 3; }
+	size = 0.4 * [camera zoomingValue] * [[appDelegate settingsManager] brightnessFactor] * [[UIScreen mainScreen] scale];
+	if(size > 3 * [[UIScreen mainScreen] scale]) { size = 3 * [[UIScreen mainScreen] scale]; }
 	if(size < 1) { return; }
 	glPointSize(size);
 	glDrawArrays(GL_POINTS, [[starSizeNum objectAtIndex:0] intValue] + [[starSizeNum objectAtIndex:1] intValue] + [[starSizeNum objectAtIndex:2] intValue] + [[starSizeNum objectAtIndex:3] intValue] + [[starSizeNum objectAtIndex:4] intValue], [[starSizeNum objectAtIndex:5] intValue]);	
@@ -596,7 +593,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 			highlightPosition.x, highlightPosition.y, highlightPosition.z
 		};
 		
-		glPointSize(highlightSize);
+		glPointSize(highlightSize*[[UIScreen mainScreen] scale]);
 		glBindTexture(GL_TEXTURE_2D, textures[9]);
 		
 		glColor4f(0.5f,0.5f,0.5f,0.75f);
@@ -633,7 +630,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	GLfloat size = 0;
 	while(i <= 10) {
 		size = planetPoints[(i*8)+7];
-		glPointSize(size);
+		glPointSize(size*[[UIScreen mainScreen] scale]);
 		
 		if (i == 1) { // maan
 			
@@ -719,7 +716,7 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 		0.0, 1.0, -0.0
 	};
 			
-	glPointSize(20.0f);
+	glPointSize(20.0f*[[UIScreen mainScreen] scale]);
 	
 	glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 	
@@ -754,13 +751,10 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	if(sunHeight > 20) {
 		bgConstant = 1.5;
 	}
-	else if(sunHeight < -20) {
-		bgConstant = 0;
-	}
 	else if(sunHeight > 0) {
 		bgConstant = (sunHeight / 14);
 	}
-	else if(sunHeight < 0) {
+	else if(sunHeight <= 0) {
 		bgConstant = 0;
 	}
 	
