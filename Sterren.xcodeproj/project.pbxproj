@@ -24,6 +24,8 @@
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
+		7675BD27141EA14C003ED668 /* Default@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 7675BD26141EA14C003ED668 /* Default@2X.png */; };
+		7675BD29141EA35F003ED668 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7675BD28141EA35F003ED668 /* CoreMotion.framework */; };
 		767820EC10F10CD3001ADE6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767820EA10F10CD3001ADE6D /* Localizable.strings */; };
 		7695E62310F29F540064FFD9 /* messierBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7695E62210F29F540064FFD9 /* messierBack.png */; };
 		7695E64110F2A3350064FFD9 /* messierForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7695E64010F2A3350064FFD9 /* messierForeground.png */; };
@@ -286,6 +288,8 @@
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7675BD26141EA14C003ED668 /* Default@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2X.png"; path = "Resources/Default@2X.png"; sourceTree = "<group>"; };
+		7675BD28141EA35F003ED668 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		767820EB10F10CD3001ADE6D /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		767820EF10F10CEC001ADE6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		7695E62210F29F540064FFD9 /* messierBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messierBack.png; path = Resources/messierBack.png; sourceTree = "<group>"; };
@@ -553,6 +557,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7675BD29141EA35F003ED668 /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
@@ -598,6 +603,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7675BD28141EA35F003ED668 /* CoreMotion.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				B587976C11DA693B00CE61C4 /* Resources-iPad */,
@@ -613,6 +619,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7675BD26141EA14C003ED668 /* Default@2X.png */,
 				76A3BF0C114BA36C00DE6BB1 /* icon_large.png */,
 				76E6935010FA367100924A41 /* database.db */,
 				767820EA10F10CD3001ADE6D /* Localizable.strings */,
@@ -1048,6 +1055,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Sterren" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1276,6 +1284,7 @@
 				76A3BF0D114BA36C00DE6BB1 /* icon_large.png in Resources */,
 				76B49EC311EDD7C400519896 /* compass_off.png in Resources */,
 				76B49EC411EDD7C400519896 /* compass.png in Resources */,
+				7675BD27141EA14C003ED668 /* Default@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,10 +1366,9 @@
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
-				VALID_ARCHS = armv6;
 			};
 			name = Debug;
 		};
@@ -1380,7 +1388,7 @@
 				);
 				INFOPLIST_FILE = "Sterren-Info.plist";
 				PRODUCT_NAME = Sterren;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include/libxml2 /usr/include/libxml2";
 			};

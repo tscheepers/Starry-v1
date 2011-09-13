@@ -10,6 +10,7 @@
 #import "SRStar.h"
 #import "OpenGLCommon.h"
 #import "SRObjectManager.h"
+#import "SterrenAppDelegate.h"
 
 @implementation SRSQLiteDelegate
 
@@ -21,7 +22,7 @@
 -(void) readStarsFromDatabase {
 	NSLog(@"Star star read");
 	sqlite3 *database;
-	SRObjectManager* objectManager = [[[UIApplication sharedApplication] delegate] objectManager];
+	SRObjectManager* objectManager = [(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager];
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		const char *sqlStatement = "select id,hip,gliese,bayerflamsteed,propername,ra,dec,mag,colorindex from hyg order by mag limit 5000";
 		sqlite3_stmt *compiledStatement;

@@ -13,7 +13,7 @@
 
 
 #import "XMLParser.h"
-//#import "SterrenAppDelegate.h"
+#import "SterrenAppDelegate.h"
 #import "SRStar.h"
 #import "SRConstellation.h"
 
@@ -28,7 +28,7 @@
 	constellations = FALSE;
 	messier = FALSE;
 	start = TRUE;
-	objectManager = [[[UIApplication sharedApplication] delegate] objectManager];
+	objectManager = [(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager];
 	
 	return self;
 }

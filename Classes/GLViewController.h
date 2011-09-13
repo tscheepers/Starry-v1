@@ -19,8 +19,7 @@
 #import "SRRenderer.h"
 #import "SRStar.h"
 
-@interface GLViewController : UIViewController <GLViewDelegate>
-{
+@interface GLViewController : UIViewController <GLViewDelegate> {
 	SRCamera *camera;
 	GLView *theView;
 	SRRenderer *renderer;

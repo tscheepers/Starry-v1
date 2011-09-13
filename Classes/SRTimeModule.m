@@ -12,6 +12,7 @@
 //
 
 #import "SRTimeModule.h"
+#import "SterrenAppDelegate.h"
 
 
 @implementation SRTimeModule
@@ -23,7 +24,7 @@
 		
 		initialXValueIcon = 58;
 		
-		manager = [[[UIApplication sharedApplication] delegate] timeManager];
+		manager = [(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager];
 		[manager setModuleInstance:self];
 		
 		elements = [[NSMutableArray alloc] init];

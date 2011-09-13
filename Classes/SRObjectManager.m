@@ -8,9 +8,9 @@
 
 #import "SRObjectManager.h"
 #import "XMLParser.h"
-//#import "AQXMLParser.h"
-//#import "SRXMLParserDelegate.h"
+
 #import "SRSQLiteDelegate.h"
+#import "SterrenAppDelegate.h"
 
 
 @implementation SRObjectManager
@@ -29,28 +29,12 @@
 		messier = [[NSMutableArray alloc] init];
 		planets = [[NSMutableArray alloc] init];
 		
-		//appDelegate = [[UIApplication sharedApplication] delegate];
     }
     return self;
 }
 
 -(void)parseData {
-	/*NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"stars" ofType: @"xml"]];
-	//AQXMLParser *xmlParser = [[AQXMLParser alloc] initWithData:data];
-	AQXMLParser *xmlParser2 = [[AQXMLParser alloc] initWithData:data];
-	//XMLParser *parser = [[XMLParser alloc] initXMLParser];
-	SRXMLParserDelegate *parser2 = [[SRXMLParserDelegate alloc] init];
-	//[xmlParser setDelegate:parser];
-	[xmlParser2 setDelegate:parser2];
-	//BOOL success = [xmlParser parse];
-	BOOL success = [xmlParser2 parse];
 	
-	if(success) {
-		NSLog(@"Sterren-parse completed");
-	}
-	else {
-		NSLog(@"Sterren Parse error");
-	}*/
 	SRSQLiteDelegate * sqlLoader = [[SRSQLiteDelegate alloc] init];
 	[sqlLoader checkAndCreateDatabase];
 	[sqlLoader readStarsFromDatabase];
@@ -92,8 +76,6 @@
 	if ([planets count] < 1) {
 		moon = [[SRMoon alloc] init];
 		sun = [[SRSun alloc] init];
-		//[planets addObject:sun];
-		//[sun release];
 		
 		SRPlanetaryObject *earth = [[SRPlanetaryObject alloc] initWitha:1.00000	
 											   e:0.01671	
@@ -188,8 +170,8 @@
 		[pluto release];
 	}
 	
-	[sun recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
-	[moon recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
+	[sun recalculatePosition:[[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
+	[moon recalculatePosition:[[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 	
 	SRPlanetaryObject *planet;
 	
@@ -240,73 +222,6 @@
 }
 
 -(void)buildStarData {
-	//NSLog(@"Star count: %i",[stars count]);
-
-	/* starNum = 0;
-	GLfloat starPointsTmp[[stars count]*8];
-	int matrixStartPos;
-	int starSizeNumTmp[6] = { 0, 0, 0, 0, 0, 0 };
-	//float size;
-	//float alpha;
-	SRStar * star;
-	starSizeNum = [[NSMutableArray alloc] init];
-	
-	for(star in stars) {
-		if(star.name != @"Sol") {
-			
-			//size = [star size];
-			//alpha = [star alpha];
-			
-			//starColor color = ;
-				
-				matrixStartPos = starNum * 8;
-				starPointsTmp[matrixStartPos] = [star.x floatValue];
-				starPointsTmp[matrixStartPos+1] = [star.y floatValue];
-				starPointsTmp[matrixStartPos+2] = [star.z floatValue];
-				starPointsTmp[matrixStartPos+3] = [star color].red;
-				starPointsTmp[matrixStartPos+4] = [star color].green;
-				starPointsTmp[matrixStartPos+5] = [star color].blue;
-				starPointsTmp[matrixStartPos+6] = [star alpha];
-				//starPointsTmp[matrixStartPos+7] = [star size];
-				starPointsTmp[matrixStartPos+7] = 0;
-			
-				if([[star mag] floatValue] < 2) {
-					++starSizeNumTmp[0];
-				}
-				else if ([[star mag] floatValue] < 3) {
-					starSizeNumTmp[1] += 1;
-				}
-				else if ([[star mag] floatValue] < 4) {
-					starSizeNumTmp[2] += 1;
-				}
-				else if ([[star mag] floatValue] < 4.5) {
-					starSizeNumTmp[3] += 1;
-				}
-				else if ([[star mag] floatValue] < 5) {
-					starSizeNumTmp[4] += 1;
-				}
-				else if ([[star mag] floatValue] < 7) {
-					starSizeNumTmp[5] += 1;
-				}
-				starNum++;
-		}
-	}
-	
-	if (starPoints) {
-		[starPoints release];
-	}
-	starPoints = [[NSMutableArray alloc] init];
-	
-	for (int i=0; i < starNum*8; i++) {
-		[starPoints addObject:[NSNumber numberWithFloat:starPointsTmp[i]]];
-		//NSLog(@"%i", i);
-	}
-	
-	for (int i=0; i < 6; i++) {
-		[starSizeNum addObject:[NSNumber numberWithInt:starSizeNumTmp[i]]];
-		NSLog(@"inladen in array:%i,%i",starSizeNumTmp[i],i);
-	}
-	  */
 
 }
 
@@ -330,7 +245,6 @@
 	
 	for (int i=0; i <= (messierNum * 3); i++) {
 		[messierPoints addObject:[NSNumber numberWithFloat:messierPointsTmp[i]]];
-		//NSLog(@"%i", i);
 	}
 }
 

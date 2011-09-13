@@ -7,7 +7,7 @@
 //
 
 #import "SRPlanetModule.h"
-
+#import "SterrenAppDelegate.h"
 
 @implementation SRPlanetModule
 
@@ -85,7 +85,7 @@
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
 		else if([mElement identifier] == @"date") {
-			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%@",[[[[UIApplication sharedApplication] delegate] timeManager] theDate]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%@",[[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager] theDate]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
 			glColor4f(0.294f, 0.513f, 0.93f, alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -93,7 +93,7 @@
 			
 		}
 		else if([mElement identifier] == @"speed") {
-			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[[[[UIApplication sharedApplication] delegate] timeManager] speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
+			Texture2D* texture = [[Texture2D alloc] initWithString:[[NSString alloc] initWithFormat:@"%ix",[[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager] speed]] dimensions:CGSizeMake(64,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11];
 			glColor4f(0.56f, 0.831f, 0.0f, alphaValue);
 			[texture drawInRect:[mElement bounds]];
 			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);

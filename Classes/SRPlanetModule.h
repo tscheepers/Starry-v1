@@ -15,4 +15,9 @@
 	
 }
 
+-(void)draw;
+
+-(void)switchPlay:(BOOL)aFlag;
+
+
 @end

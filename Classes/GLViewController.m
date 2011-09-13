@@ -342,7 +342,7 @@
 	float zoomingValue = [camera zoomingValue];
 	float xd,yd,zd,sunD,moonD;
 	
-	SRSun * sun = [[[[UIApplication sharedApplication] delegate] objectManager] sun];
+	SRSun * sun = [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager] sun];
 	xd = sun.position.x-plX;
 	yd = sun.position.y-plY;
 	zd = sun.position.z-plZ;
@@ -368,7 +368,7 @@
 		[renderer setHighlight:TRUE];
 	}
 	else {			
-		SRMoon * moon = [[[[UIApplication sharedApplication] delegate] objectManager] moon];
+		SRMoon * moon = [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager] moon];
 		xd = moon.position.x-plX;
 		yd = moon.position.y-plY;
 		zd = moon.position.z-plZ;
@@ -395,7 +395,7 @@
 			closestD = 15; // moet een hoge begin waarde hebben vanwege het steeds kleiner worden
 			SRPlanetaryObject * planet;
 			SRPlanetaryObject * closestPlanet;
-			for(planet in [[[[UIApplication sharedApplication] delegate] objectManager] planets]) {
+			for(planet in [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager] planets]) {
 				
 				
 				// http://freespace.virgin.net/hugo.elias/routines/r_dist.htm

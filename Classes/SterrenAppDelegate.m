@@ -24,14 +24,10 @@
 @synthesize window, glView, uiElementsView, location, timeManager, objectManager, settingsManager;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-	
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	//NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
-	//NSString *currentLanguage = [languages objectAtIndex:0];
-	
-	NSLog(@"Current Locale: %@", [[NSLocale currentLocale] localeIdentifier]);
-	//NSLog(@"Current language: %@", currentLanguage);
-	//NSLog(@"Welcome Text: %@", NSLocalizedString(@"WelcomeKey", @""));
+    
+    NSLog(@"\n #\n #           _        __ _       _ _             _                 _      _       \n #          (_)      / _(_)     (_) |           | |               | |    | |      \n #           _ _ __ | |_ _ _ __  _| |_ ___    __| |_ __ ___  _ __ | | ___| |_ ___ \n #          | | '_ \\|  _| | '_ \\| | __/ _ \\  / _` | '__/ _ \\| '_ \\| |/ _ \\ __/ __|\n #          | | | | | | | | | | | | ||  __/ | (_| | | | (_) | |_) | |  __/ |_\\__ \\ \n #          |_|_| |_|_| |_|_| |_|_|\\__\\___|  \\__,_|_|  \\___/| .__/|_|\\___|\\__|___/\n #                                                          | |                   \n #                                                          |_|  \n # \n # Welkom l337 h4x0r,\n # \n # Dit is een Starry door Jan-Willem Buurlage & Infinite Droplets!\n # \n # Zoek je nog een baantje in de buurt van Enschede? http://infinitedroplets.com/werken_bij_id.html\n # \n # Dit is: %@\n # Versie: %@ \n #",
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"],
+          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
 	
 	objectManager = [[SRObjectManager alloc] init];
 	location = [[SRLocation alloc] init];

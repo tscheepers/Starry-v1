@@ -36,12 +36,12 @@
 		fieldOfView = 0.3 * M_PI; 
 		size = zNear * tanf(fieldOfView / 2.0); 
 		rect = view.bounds; 
-		//iPadWidthNSLog(@"bladiebla: %f",rect.size.width);
+		
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
 		NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
-		//glOrthof( 0, iPadWidth, iPadHeight, 0, 1, 0 );
-		glViewport(0, 0, rect.size.width, rect.size.height);  
+
+		glViewport(0, 0, rect.size.width*[[UIScreen mainScreen] scale], rect.size.height*[[UIScreen mainScreen] scale]);  
 		
 		iPadWidth = view.bounds.size.width;
 		iPadHeight = view.bounds.size.height;
@@ -210,7 +210,7 @@
 }
 
 - (void)adjustView {
-	if(usingCompass && [[[[UIApplication sharedApplication] delegate] location] useCompass]) {
+	if(usingCompass && [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] location] useCompass]) {
 		if((altitude - altitudeCompass) > 3 || (altitude - altitudeCompass) < -3) {
 			altitude = (altitude + floor(altitudeCompass*100.0 + 0.5)/100.0)/2;
 		}
@@ -339,7 +339,7 @@
 	
 	//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 	
-	glViewport(0, 0, rect.size.width, rect.size.height);  
+	glViewport(0, 0, rect.size.width*[[UIScreen mainScreen] scale], rect.size.height*[[UIScreen mainScreen] scale]);  
 	
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();	

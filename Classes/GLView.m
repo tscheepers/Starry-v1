@@ -66,6 +66,15 @@
 #endif
         
         animationInterval = 1.0 / kRenderingFrequency;
+        
+        if([[UIScreen mainScreen] respondsToSelector: NSSelectorFromString(@"scale")])
+        {
+            if([self respondsToSelector: NSSelectorFromString(@"contentScaleFactor")])
+            {
+                self.contentScaleFactor = [[UIScreen mainScreen] scale];
+            }
+        }
+        
     }
     return self;
 }

@@ -58,7 +58,7 @@
 	
 	float n = (M_PI / 180) * (0.9856076686/(a*sqrt(a)));
 	float meanAnomaly = ((M_PI / 180) * Mo) + n*(d);
-	//NSLog(@"meanAnomaly: %f", fmod(meanAnomaly * (180 / M_PI), 360));
+	
 	//we lossen Keplers' vergelijking op
 	//iteratie tot di te klein is
 	float Ea = meanAnomaly; 
@@ -75,7 +75,6 @@
 	
 	float eccentricAnomaly = Ea;
 	float trueAnomaly = 2*atan(sqrt((1+e)/(1-e))*tan(eccentricAnomaly / 2));
-	//NSLog(@"trueAnomaly: %f", fmod(trueAnomaly * (180 / M_PI), 360));
 
 	float distance = a*(1 - pow(e,2))/(1 + e*cos(trueAnomaly));
 	
@@ -105,18 +104,12 @@
 	float obliquity = 23.4397 * (M_PI / 180);
 	
 	float distance = (sqrt(pow(x,2)+pow(y,2)+pow(z,2)));
-	//NSLog(@"distance: %f", distance);
 	
 	float eclipticLongitude = atan2(y,x);
 	float eclipticLatitude = asin(z/distance);
-	//NSLog(@"eclipticLongitude: %f", fmod(eclipticLongitude * (180 / M_PI), 360));
-	//NSLog(@"eclipticLatitude: %f", fmod(eclipticLatitude * (180 / M_PI), 360));
-
 	
 	float rightAscension = atan2(sin(eclipticLongitude)*cos(obliquity)-tan(eclipticLatitude)*sin(obliquity), cos(eclipticLongitude));
 	float declination = asin(sin(eclipticLatitude)*cos(obliquity)+cos(eclipticLatitude)*sin(obliquity)*sin(eclipticLongitude));
-	//NSLog(@"rightAscension: %f", fmod(rightAscension * (180 / M_PI) + 360, 360));
-	//NSLog(@"declination: %f", fmod(declination * (180 / M_PI), 360));
 
 	declination = (M_PI / 2) - declination;
 	
@@ -126,25 +119,7 @@
 	
 	position = Vertex3DMake(x, y, z);
 	
-
-	//NSLog(@"(x,y,z): (%f,%f,%f)",x,y,z);
 }
-
-/*-(Vertex3D)position { 
-	return position;
-}
-						
-/* -(float)azimuth {
-	return azi;
-}
-
--(float)altitude {
-    return alt;
-}
-
--(float)sprite {
-	
-} */
 
 -(Vertex3D)myCurrentPosition {
 	
