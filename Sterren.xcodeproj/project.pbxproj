@@ -206,8 +206,6 @@
 		AC8A89D210C5898B0015CDF5 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A89D010C5898B0015CDF5 /* info.png */; };
 		AC8A89D310C5898B0015CDF5 /* nameplatebg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A89D110C5898B0015CDF5 /* nameplatebg.png */; };
 		AC8A8A7110C59FC80015CDF5 /* constellation.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8A6F10C59FC80015CDF5 /* constellation.png */; };
-		AC8A8A7210C59FC80015CDF5 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8A7010C59FC80015CDF5 /* red.png */; };
-		AC8A8AC110C5A4750015CDF5 /* brightness_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */; };
 		AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */; };
 		AC8AFB7B10F39D3C00517901 /* positionOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AC8AFB7A10F39D3C00517901 /* positionOverlay.png */; };
 		AC97059410C5B4190048DB59 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = AC97058D10C5B4190048DB59 /* sun.png */; };
@@ -242,7 +240,6 @@
 		ACD34EBB10F64EB400EBEBBF /* Pluto.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD34EBA10F64EB400EBEBBF /* Pluto.png */; };
 		ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */; };
 		ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA1B10F509C7007CD4C7 /* close.png */; };
-		ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BA4B10F50C1E007CD4C7 /* add_list.png */; };
 		ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */; };
 		ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BB5C10F52AAD007CD4C7 /* pause.png */; };
 		ACD3BBAC10F53199007CD4C7 /* positionOverlayIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3BBAB10F53199007CD4C7 /* positionOverlayIcon.png */; };
@@ -487,8 +484,6 @@
 		AC8A89D010C5898B0015CDF5 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = Resources/info.png; sourceTree = "<group>"; };
 		AC8A89D110C5898B0015CDF5 /* nameplatebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nameplatebg.png; path = Resources/nameplatebg.png; sourceTree = "<group>"; };
 		AC8A8A6F10C59FC80015CDF5 /* constellation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = constellation.png; path = Resources/constellation.png; sourceTree = "<group>"; };
-		AC8A8A7010C59FC80015CDF5 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = Resources/red.png; sourceTree = "<group>"; };
-		AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_minus.png; path = Resources/brightness_minus.png; sourceTree = "<group>"; };
 		AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brightness_plus.png; path = Resources/brightness_plus.png; sourceTree = "<group>"; };
 		AC8AFB7A10F39D3C00517901 /* positionOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = positionOverlay.png; path = Resources/positionOverlay.png; sourceTree = "<group>"; };
 		AC97058D10C5B4190048DB59 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = Resources/Textures/sun.png; sourceTree = "<group>"; };
@@ -529,7 +524,6 @@
 		ACD34EBA10F64EB400EBEBBF /* Pluto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pluto.png; path = Resources/planets/Pluto.png; sourceTree = "<group>"; };
 		ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetLabel.png; path = Resources/planetLabel.png; sourceTree = "<group>"; };
 		ACD3BA1B10F509C7007CD4C7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
-		ACD3BA4B10F50C1E007CD4C7 /* add_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_list.png; path = Resources/add_list.png; sourceTree = "<group>"; };
 		ACD3BA6810F50EEC007CD4C7 /* SRListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRListManager.h; sourceTree = "<group>"; };
 		ACD3BA6910F50EEC007CD4C7 /* SRListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRListManager.m; sourceTree = "<group>"; };
 		ACD3BB5C10F52AAD007CD4C7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
@@ -656,7 +650,6 @@
 				AC8A89D010C5898B0015CDF5 /* info.png */,
 				ACD3BA1B10F509C7007CD4C7 /* close.png */,
 				AC8A89D110C5898B0015CDF5 /* nameplatebg.png */,
-				ACD3BA4B10F50C1E007CD4C7 /* add_list.png */,
 				ACECC6C610CDA19600CBE4AC /* messier.png */,
 				AC4F8956109DF46900B8BD64 /* click.png */,
 				ACFAF6F410CBD02400A6AB77 /* sun_planet.png */,
@@ -838,12 +831,10 @@
 		AC8A8A6E10C59FBD0015CDF5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				AC8A8ABF10C5A4750015CDF5 /* brightness_minus.png */,
 				ACD3B9E910F4FF1B007CD4C7 /* planetLabel.png */,
 				AC8A8AC010C5A4750015CDF5 /* brightness_plus.png */,
 				ACD3BBAB10F53199007CD4C7 /* positionOverlayIcon.png */,
 				AC8A8A6F10C59FC80015CDF5 /* constellation.png */,
-				AC8A8A7010C59FC80015CDF5 /* red.png */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1095,8 +1086,6 @@
 				AC8A89D210C5898B0015CDF5 /* info.png in Resources */,
 				AC8A89D310C5898B0015CDF5 /* nameplatebg.png in Resources */,
 				AC8A8A7110C59FC80015CDF5 /* constellation.png in Resources */,
-				AC8A8A7210C59FC80015CDF5 /* red.png in Resources */,
-				AC8A8AC110C5A4750015CDF5 /* brightness_minus.png in Resources */,
 				AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */,
 				AC97059410C5B4190048DB59 /* sun.png in Resources */,
 				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
@@ -1254,7 +1243,6 @@
 				AC8AFB7B10F39D3C00517901 /* positionOverlay.png in Resources */,
 				ACD3B9EA10F4FF1B007CD4C7 /* planetLabel.png in Resources */,
 				ACD3BA1C10F509C7007CD4C7 /* close.png in Resources */,
-				ACD3BA4C10F50C1E007CD4C7 /* add_list.png in Resources */,
 				ACD3BB5D10F52AAD007CD4C7 /* pause.png in Resources */,
 				ACD3BBAC10F53199007CD4C7 /* positionOverlayIcon.png in Resources */,
 				ACD34EBB10F64EB400EBEBBF /* Pluto.png in Resources */,

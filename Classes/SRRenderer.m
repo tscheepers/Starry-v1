@@ -555,8 +555,10 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				glColor4f(0.3f, 0.6f, 1.0f, constAlpha);
 				[aConstellation draw];
 				
-				glColor4f(1.0f, 1.0f, 1.0f, constAlpha*3);
-				[aConstellation drawText];
+                if([[appDelegate settingsManager] showPlanetLabels]) {  
+                    glColor4f(1.0f, 1.0f, 1.0f, constAlpha*3);
+                    [aConstellation drawText];
+                }
 			}
 			else { 
 				float factor = (distance - 10) / 4;
@@ -564,9 +566,11 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 				glColor4f(0.3f, 0.6f, 1.0f, constAlpha / factor); 
 				
 				[aConstellation draw];
-				
-				glColor4f(1.0f, 1.0f, 1.0f, (constAlpha * 3 / factor));
-				[aConstellation drawText];
+                
+				if([[appDelegate settingsManager] showPlanetLabels]) {  
+                    glColor4f(1.0f, 1.0f, 1.0f, (constAlpha * 3 / factor));
+                    [aConstellation drawText];
+                }
 			} 
 		}
 	}
@@ -608,14 +612,16 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f - (1 / [camera zoomingValue]));
 	if(1.0f - (1 / [camera zoomingValue]) > 0.0f) {
 	glVertexPointer(3, GL_FLOAT, 12, messierPoints);
-		glPointSize(8.0f);
+		glPointSize(8.0f*[[UIScreen mainScreen] scale]);
 		glBindTexture(GL_TEXTURE_2D, textures[10]);
 		glDrawArrays(GL_POINTS, 0, messierNum);
 		glColor4f(0.5f, 1.0f, 0.5f, 1.0f - (1 / [camera zoomingValue]));
-
-	for(int i = 1; i <= messierNum; ++i) {
-		[[messierLabels objectAtIndex:i - 1] drawAtVertex:Vertex3DMake(messierPoints[(i - 1)*3], messierPoints[(i - 1)*3 + 1], messierPoints[(i - 1)*3 + 2])];
-	}
+        
+    if([[appDelegate settingsManager] showPlanetLabels]) {    
+        for(int i = 1; i <= messierNum; ++i) {
+            [[messierLabels objectAtIndex:i - 1] drawAtVertex:Vertex3DMake(messierPoints[(i - 1)*3], messierPoints[(i - 1)*3 + 1], messierPoints[(i - 1)*3 + 2])];
+        }
+    }
 	}
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 

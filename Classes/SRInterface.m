@@ -727,10 +727,10 @@
 			}
 			else {
 				if(slider) {
-					[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
-					[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
-					[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
-					[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
+					[slider setThumbImage:nil forState:UIControlStateNormal];
+					[slider setThumbImage:nil forState:UIControlStateHighlighted];
+					[slider setMaximumTrackImage:nil forState:UIControlStateNormal];
+					[slider setMinimumTrackImage:nil forState:UIControlStateNormal];
 				}
 				[[appDelegate settingsManager] setShowRedOverlay:FALSE];
 			}
@@ -1196,22 +1196,17 @@
 	iPadHeight = [[renderer myOwner] iPadHeight];
 	BOOL justCreated = NO;
 	if (!slider) {
-		slider = [[UISlider alloc] initWithFrame:CGRectMake(-36*320/iPadWidth, 165*iPadHeight/480, 120, 23
+		slider = [[UISlider alloc] initWithFrame:CGRectMake(-38*320/iPadWidth, 157*iPadHeight/480, 120, 23
 															)];
-		
+
 		if([[appDelegate settingsManager] showRedOverlay]) {
 			[slider setThumbImage:[UIImage imageNamed:@"slider_normal_red.png"] forState:UIControlStateNormal];
 			[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted_red.png"] forState:UIControlStateHighlighted];
 			[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max_red.png"] forState:UIControlStateNormal];
 			[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min_red.png"] forState:UIControlStateNormal];
 		}
-		else {
-			[slider setThumbImage:[UIImage imageNamed:@"slider_normal.png"] forState:UIControlStateNormal];
-			[slider setThumbImage:[UIImage imageNamed:@"slider_highlighted.png"] forState:UIControlStateHighlighted];
-			[slider setMaximumTrackImage:[UIImage imageNamed:@"slider_max.png"] forState:UIControlStateNormal];
-			[slider setMinimumTrackImage:[UIImage imageNamed:@"slider_min.png"] forState:UIControlStateNormal];
-		}
-		
+    
+         
 		justCreated = YES;
 		[slider setMinimumValue:0.5];
 		[slider setMaximumValue:3];
