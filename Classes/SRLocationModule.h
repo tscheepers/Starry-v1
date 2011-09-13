@@ -28,8 +28,7 @@
 	BOOL longVisible;
 	
 	BOOL GPS;
-	BOOL Compass
-	;
+	BOOL Compass;
 }
 
 @property (readonly) float latitude;

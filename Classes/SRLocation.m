@@ -13,6 +13,7 @@
 
 
 #import "SRLocation.h"
+#import "SRLocationModule.h"
 
 @implementation SRLocation
 
@@ -44,33 +45,26 @@
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    //NSLog(@"Ik ben nu hier: %@", [newLocation description]);
+           fromLocation:(CLLocation *)oldLocation {
 	
 	myLocation = newLocation;
 	longitude = myLocation.coordinate.longitude;
 	latitude = myLocation.coordinate.latitude;
 	
+	/* Debug values 
+	longitude = 4.874036;
+	latitude = 52.741535;
+	NSLog(@"Debug, setting longitude and latitude naar die van Schagen"); */
 	
-	//NSLog(@"Longitude van GPS: %f",longitude);
-	//NSLog(@"Latitude van GPS: %f",latitude);
-	
-	/* Debug values */
-	//longitude = 4.874036;
-	//latitude = 52.741535;
-	//NSLog(@"Debug, setting longitude and latitude naar die van Schagen");
-	
-	if(interfaceDelegate) {
-		[interfaceDelegate updateDisplayedLocationData];
+	if(interfaceDelegate && [interfaceDelegate isKindOfClass:[SRLocationModule class]]) {
+		[(SRLocationModule*)interfaceDelegate updateDisplayedLocationData];
 	}
 	
 }
 
 - (void)locationManager:(CLLocationManager *)manager
-	   didFailWithError:(NSError *)error
-{
-	//NSLog(@"SRLocation Error: %@", [error description]);
+	   didFailWithError:(NSError *)error {
+	NSLog(@"Er is een probleem met het opvragen van de locatie: %@", [error description]);
 }
 
 - (void)makeAwareOfInterface:(id)aInterface {
@@ -78,26 +72,12 @@
 	/* Misschien in de toekomst een array maken voor medere interfaces, bijvoorbeeld voor een lijst met plaatsten */
 }
 
-/*// Getter's met log het debuggen
-
-- (float)longitude {
-	NSLog(@"LocationManager is giving longitude:%f",longitude);
-	return longitude;
-}
-
-- (float)latitude {
-	NSLog(@"LocationManager is giving latitude:%f",latitude);
-	return latitude;
-}*/
-
-// Dealloc
 
 -(void)useStaticValues {
 	// Als er geen locatie service is kan deze ook niet worden uitgezet
-	//if ([locationManager locationServicesEnabled]) {
-		[locationManager stopUpdatingLocation];
-		staticValues = YES;
-	//}
+	
+    [locationManager stopUpdatingLocation];
+    staticValues = YES;
 }
 
 -(void)useGPSValues {

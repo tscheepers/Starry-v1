@@ -176,7 +176,7 @@
 	SRPlanetaryObject *planet;
 	
 	for (planet in planets) {
-		[planet recalculatePosition:[[[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
+		[planet recalculatePosition:[[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] timeManager] simulatedDate]];
 		if (planet.a != 1) {  //slordig hooorr
 			[planet setViewOrigin:[[planets objectAtIndex:0] positionHelio]];
 		}

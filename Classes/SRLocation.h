@@ -16,7 +16,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GLView.h"
 #import "OpenGLCommon.h"
-//#import "SRLocationModule.h"
 
 @interface SRLocation : NSObject <CLLocationManagerDelegate> {
 	CLLocationManager *	locationManager;
