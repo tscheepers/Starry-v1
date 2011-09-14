@@ -20,7 +20,6 @@
 }
 
 -(void) readStarsFromDatabase {
-	NSLog(@"Star star read");
 	sqlite3 *database;
 	SRObjectManager* objectManager = [(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] objectManager];
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
@@ -66,7 +65,6 @@
 		sqlite3_finalize(compiledStatement);
 	}
 	sqlite3_close(database);
-	NSLog(@"Star read completed");
 	
 }
 

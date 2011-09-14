@@ -533,7 +533,7 @@
 									else if([greekStrTmp isEqualToString:@"Ome"])
 										greekStr = @"ω";
 									else {
-										NSLog(@"Griekse letter: %@",greekStrTmp);
+										//NSLog(@"Griekse letter: %@",greekStrTmp);
 										greekStr = @"";
 									}
 									[[[renderer interface] theNameplate] setName:NSLocalizedString(closestStar.name, @"") inConstellation:[NSString stringWithFormat:@"%@ %@ %@",numberStr,greekStr,constellationStr] showInfo:YES];

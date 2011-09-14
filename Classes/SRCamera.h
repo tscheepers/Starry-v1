@@ -14,6 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
 #import <UIKit/UIKit.h>
 #import "GLView.h"
 #import "OpenGLCommon.h"
@@ -32,6 +33,7 @@
 	
 	float altitude;
 	float azimuth;
+    float azimuthCompassAdjustment;
 	
 	float deacco;
 	float hSpeed;
@@ -64,16 +66,18 @@
 	float vSteps;
 	
 	BOOL usingCompass;
-	float azimuthCompass;
-	float altitudeCompass;
-	NSArray* altitudeCompassArray;
+
 	
 	GLfloat zoomingValue; 
 	
-	CLLocationManager* theManager;
+	CLLocationManager* locationManager;
+    CMMotionManager* motionManager;
+    
+    NSTimer * timer;
 	
 	int iPadWidth;
 	int iPadHeight;
+    
 }
 
 @property (readwrite) BOOL planetView;
@@ -81,7 +85,8 @@
 @property (readwrite) float azimuth;
 @property (readonly) float fieldOfView;
 
--(GLfloat)zoomingValue;
+- (void)recalculateCompassAdjustment;
+- (GLfloat)zoomingValue;
 - (id)initWithView:(GLView*)view;
 - (void)adjustView;
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY;

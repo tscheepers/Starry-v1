@@ -40,10 +40,9 @@
 	float d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730532 + ((hour / 24) + (minute / 1440) + (second / 86400));
 //>>>>>>> 9f88745b713c4df9884b1eded5b2a7473893ea77
 	//d = 1460.5;
-	NSLog(@"day: %f", d);
+
 	d = 367*year - (7*(year + ((month+9)/12)))/4 + (275*month)/9 + day - 730530 + ((hour / 24) + minute / 1440 + second / 86400);
-	NSLog(@"day: %f", d);
-	NSLog(@"hour: %f", hour);
+
 	
 	//positie uitrekenen:
 	float geoEclipticLongitude = 218.316 + (13.176396 * d);
@@ -155,7 +154,7 @@
 	
 	Vertex3D result = Vertex3DMake(-brX/15, -brY/15, -brZ/15);
 	
-	NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",brX/15,brY/15,brZ/15);
+	//NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",brX/15,brY/15,brZ/15);
 	
 	return result;
 }

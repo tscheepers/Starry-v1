@@ -167,7 +167,7 @@
 	
 	Vertex3D result = Vertex3DMake(-brX/15, -brY/15, -brZ/15);
 	
-	NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",brX/15,brY/15,brZ/15);
+	//NSLog(@"Geroteerde locatie planeet berekend x:%f y:%f z:%f",brX/15,brY/15,brZ/15);
 	
 	return result;
 }

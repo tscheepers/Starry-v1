@@ -18,6 +18,7 @@
 #import "SRObjectManager.h"
 #import "ConstantsAndMacros.h"
 #import "SRLocation.h"
+#import "IDModuleController.h"
 
 @implementation SterrenAppDelegate
 
@@ -25,7 +26,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    NSLog(@"\n #\n #           _        __ _       _ _             _                 _      _       \n #          (_)      / _(_)     (_) |           | |               | |    | |      \n #           _ _ __ | |_ _ _ __  _| |_ ___    __| |_ __ ___  _ __ | | ___| |_ ___ \n #          | | '_ \\|  _| | '_ \\| | __/ _ \\  / _` | '__/ _ \\| '_ \\| |/ _ \\ __/ __|\n #          | | | | | | | | | | | | ||  __/ | (_| | | | (_) | |_) | |  __/ |_\\__ \\ \n #          |_|_| |_|_| |_|_| |_|_|\\__\\___|  \\__,_|_|  \\___/| .__/|_|\\___|\\__|___/\n #                                                          | |                   \n #                                                          |_|  \n # \n # Welkom l337 h4x0r,\n # \n # Dit is een Starry door Jan-Willem Buurlage & Infinite Droplets!\n # \n # Zoek je nog een baantje in de buurt van Enschede? http://infinitedroplets.com/werken_bij_id.html\n # \n # Dit is: %@\n # Versie: %@ \n #",
+    NSLog(@"\n #\n #           _        __ _       _ _             _                 _      _       \n #          (_)      / _(_)     (_) |           | |               | |    | |      \n #           _ _ __ | |_ _ _ __  _| |_ ___    __| |_ __ ___  _ __ | | ___| |_ ___ \n #          | | '_ \\|  _| | '_ \\| | __/ _ \\  / _` | '__/ _ \\| '_ \\| |/ _ \\ __/ __|\n #          | | | | | | | | | | | | ||  __/ | (_| | | | (_) | |_) | |  __/ |_\\__ \\ \n #          |_|_| |_|_| |_|_| |_|_|\\__\\___|  \\__,_|_|  \\___/| .__/|_|\\___|\\__|___/\n #                                                          | |                   \n #                                                          |_|  \n # \n # Welkom l337 h4x0r,\n # \n # Dit is Starry door Jan-Willem Buurlage & Infinite Droplets!\n # \n # Zoek je nog een baantje in de buurt van Enschede? http://infinitedroplets.com/werken_bij_id.html\n # \n # Dit is: %@\n # Versie: %@ \n #",
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"],
           [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
 	
@@ -37,6 +38,17 @@
 	// Loading screen annimation;
 	glView.animationInterval = 1.0 / kRenderingFrequency;
 	[glView startAnimation];
+    
+    IDModuleController* touchyController = [[IDModuleController alloc] init];
+    NSURLRequest *request = [touchyController getURLRequestWithForcedDownload:NO];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection release];
+    [touchyController release];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSMutableString* stringOfData = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"De wolk dondert en bliksemt. (Starry: %@)",stringOfData);
 }
 
 

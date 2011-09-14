@@ -49,10 +49,10 @@
 	
 	
 	if(success) {
-		NSLog(@"Constellations-parse completed");
+		//NSLog(@"Constellations-parse completed");
 	}
 	else {
-		NSLog(@"Constellations Parse error"); 
+		NSLog(@"Er is een fout opgetreden bij het inladen van de sterrenbeelden"); 
 	}
 	
 	NSData * dataMessier = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"messier" ofType: @"xml"]];
@@ -64,10 +64,10 @@
 	[parserMessier release];
 	
 	if(success) {
-		NSLog(@"Messier-parse completed");
+		//NSLog(@"Messier-parse completed");
 	}
 	else {
-		NSLog(@"Messier Parse error"); 
+		NSLog(@"Er is een fout opgetreden bij het inladen van de Messier objecten"); 
 	} 
 	
 }

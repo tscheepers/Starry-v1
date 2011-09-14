@@ -35,6 +35,13 @@
 		76B49EC311EDD7C400519896 /* compass_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC111EDD7C400519896 /* compass_off.png */; };
 		76B49EC411EDD7C400519896 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC211EDD7C400519896 /* compass.png */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
+		76CACC4A14212F6100ACA403 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4814212F6100ACA403 /* icon-small.png */; };
+		76CACC4B14212F6100ACA403 /* icon-smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4914212F6100ACA403 /* icon-smaller.png */; };
+		76CACC4D14212F7000ACA403 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4C14212F7000ACA403 /* icon-small.png */; };
+		76CACC4F14212F7D00ACA403 /* icon-smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4E14212F7D00ACA403 /* icon-smaller.png */; };
+		76CACC5114212F9100ACA403 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC5014212F9100ACA403 /* Default@2x.png */; };
+		76CACC5314212F9800ACA403 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC5214212F9800ACA403 /* Default.png */; };
+		76CACC561421351600ACA403 /* IDModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CACC551421351600ACA403 /* IDModuleController.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
 		76E6933810FA31BD00924A41 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */; };
 		76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */; };
@@ -297,6 +304,14 @@
 		76B49EC211EDD7C400519896 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass.png; path = Resources/compass.png; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		76B7CC58108B235100F87C68 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		76CACC4814212F6100ACA403 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "Resources/icon-small.png"; sourceTree = "<group>"; };
+		76CACC4914212F6100ACA403 /* icon-smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-smaller.png"; path = "Resources/icon-smaller.png"; sourceTree = "<group>"; };
+		76CACC4C14212F7000ACA403 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
+		76CACC4E14212F7D00ACA403 /* icon-smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-smaller.png"; sourceTree = "<group>"; };
+		76CACC5014212F9100ACA403 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		76CACC5214212F9800ACA403 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		76CACC541421351600ACA403 /* IDModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDModuleController.h; sourceTree = "<group>"; };
+		76CACC551421351600ACA403 /* IDModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDModuleController.m; sourceTree = "<group>"; };
 		76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarInfo.h; sourceTree = "<group>"; };
 		76D7294210EBD8F80018EB62 /* SRStarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStarInfo.m; sourceTree = "<group>"; };
 		76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -592,6 +607,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				76CACC5214212F9800ACA403 /* Default.png */,
+				76CACC5014212F9100ACA403 /* Default@2x.png */,
+				76CACC4E14212F7D00ACA403 /* icon-smaller.png */,
+				76CACC4C14212F7000ACA403 /* icon-small.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -605,6 +624,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76CACC4814212F6100ACA403 /* icon-small.png */,
+				76CACC4914212F6100ACA403 /* icon-smaller.png */,
 				7675BD26141EA14C003ED668 /* Default@2X.png */,
 				76A3BF0C114BA36C00DE6BB1 /* icon_large.png */,
 				76E6935010FA367100924A41 /* database.db */,
@@ -703,6 +724,8 @@
 		AC1BA73710C021D00084CF6F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				76CACC541421351600ACA403 /* IDModuleController.h */,
+				76CACC551421351600ACA403 /* IDModuleController.m */,
 				76E6933B10FA31E400924A41 /* SRSQLiteDelegate.h */,
 				76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */,
 				76B7CC57108B235100F87C68 /* XMLParser.h */,
@@ -1259,6 +1282,12 @@
 				76B49EC311EDD7C400519896 /* compass_off.png in Resources */,
 				76B49EC411EDD7C400519896 /* compass.png in Resources */,
 				7675BD27141EA14C003ED668 /* Default@2X.png in Resources */,
+				76CACC4A14212F6100ACA403 /* icon-small.png in Resources */,
+				76CACC4B14212F6100ACA403 /* icon-smaller.png in Resources */,
+				76CACC4D14212F7000ACA403 /* icon-small.png in Resources */,
+				76CACC4F14212F7D00ACA403 /* icon-smaller.png in Resources */,
+				76CACC5114212F9100ACA403 /* Default@2x.png in Resources */,
+				76CACC5314212F9800ACA403 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,6 +1332,7 @@
 				76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */,
 				AC2839B310FF7EE0002DD356 /* SRSunInfo.m in Sources */,
 				AC2839B610FF7EE5002DD356 /* SRMoonInfo.m in Sources */,
+				76CACC561421351600ACA403 /* IDModuleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

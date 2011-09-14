@@ -95,8 +95,6 @@ highlightPosition,highlightSize,selectedStar,selectedPlanet,planetHighlighted,ob
 	a = [[[objectManager planets] objectAtIndex:2] a];
 	b = sqrt(pow(a,2) - pow(a,2)*pow(e,2));
 	
-	NSLog(@"%f, %f", a, b);
-	
 	[interface loadOrbitTextureWitha:a b:b intoLocation:textures[19]];
 
 }

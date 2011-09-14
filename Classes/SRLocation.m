@@ -86,7 +86,7 @@
 		staticValues = NO;
 	}
 	else {
-		NSLog(@"No location data allowed");
+		//NSLog(@"No location data allowed");
 		staticValues = YES;
 	}
 }
@@ -100,7 +100,7 @@
 -(void)setLatitude:(float)latValue {
 	
 	if (staticValues) {
-		NSLog(@"Latitude is set to the static value of:%f",latValue);
+		NSLog(@"Latitude is geset op een statische waarde:%f",latValue);
 		latitude = latValue;
 		[interfaceDelegate updateDisplayedLocationData];
 	}
@@ -108,7 +108,7 @@
 
 -(void)setLongitude:(float)longValue {
 	if (staticValues) {
-		NSLog(@"Longitude is set to the static value of:%f",longValue);
+		NSLog(@"Longitude is geset op een statische waarde:%f",longValue);
 		longitude = longValue;
 		[interfaceDelegate updateDisplayedLocationData];
 	}

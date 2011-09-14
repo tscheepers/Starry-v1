@@ -147,7 +147,7 @@
 		NSString* constellation = [theStar bayer];
 		[[[elements objectAtIndex:[elements count] - 8] texture] release];
 		[[elements objectAtIndex:[elements count] - 8] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(constellation,@"") dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11]];
-		NSLog(@"Bayer exeption trown %@",e);
+		NSLog(@"Bayer exceptie: %@",e);
 	}
 	@finally {
 		

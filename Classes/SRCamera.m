@@ -27,7 +27,7 @@
 		azimuth = 0.0f;
 		sphereRadius = 3.0f;
 		deacco = 0.05f;
-		usingCompass = FALSE;
+		usingCompass = NO;
 		
 		zoomingValue = 1;
 		
@@ -39,7 +39,7 @@
 		
 		glFrustumf(-size, size, -size / (rect.size.width / rect.size.height), size / 
 				   (rect.size.width / rect.size.height), zNear, zFar); 
-		NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
+		//NSLog(@"width:%f height:%f",rect.size.width ,rect.size.height);
 
 		glViewport(0, 0, rect.size.width*[[UIScreen mainScreen] scale], rect.size.height*[[UIScreen mainScreen] scale]);  
 		
@@ -48,27 +48,65 @@
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 		
-		theManager = [[CLLocationManager alloc] init];
-		if([theManager headingAvailable]) {
-			usingCompass = TRUE;
-			[theManager startUpdatingHeading];
-			theManager.delegate = self;
-			[[UIAccelerometer sharedAccelerometer] setDelegate:self];
-			[[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1
-			 ]; 
+		locationManager = [[CLLocationManager alloc] init];
+        
+        motionManager = [[CMMotionManager alloc] init];
+        
+        
+        
+		if([CLLocationManager headingAvailable] && motionManager.deviceMotionAvailable) {
+            
+			usingCompass = YES;
+            azimuthCompassAdjustment = 0;
+            
+            [locationManager setHeadingOrientation:CLDeviceOrientationLandscapeLeft];
+			[locationManager startUpdatingHeading];
+			[motionManager startDeviceMotionUpdates];
+            
+            //[self recalculateCompassAdjustment];
+            
+            timer = [NSTimer scheduledTimerWithTimeInterval:2.5f 
+                                                     target:self 
+                                                   selector:@selector(recalculateCompassAdjustment) 
+                                                   userInfo:nil 
+                                                    repeats:YES];
+            
 		}
 	}
 	
 	return self;
 }
 
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-	altitudeCompass = (acceleration.z)*90;
-	//NSLog(@"acceleration z:%f",(acceleration.z)*90);
+- (void)recalculateCompassAdjustment {
+    
+    //azimuthCompassAdjustment = adjust;
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
-	azimuthCompass = [newHeading trueHeading];
+- (void)adjustView {
+	if(usingCompass && [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] location] useCompass]) {
+        
+        CMAttitude* attitude = motionManager.deviceMotion.attitude;
+        
+        //float gyroAzi = (attitude.yaw / M_PI) * 180;
+        
+        float heading = 360 - locationManager.heading.trueHeading;
+        
+        azimuth = heading;
+        
+        altitude = ((fabs(attitude.roll / M_PI) * 180) - 90);
+        
+	}
+	
+	if(altitude > 89.9) { altitude = 89.9; }
+	else if (altitude < -89.9) { altitude = -89.9; }
+	if(azimuth < 0) { azimuth += 360; }
+	if(azimuth > 360) { fmod(azimuth, 360); }
+	
+    
+	glRotatef(-altitude, 0.0f, 1.0f, 0.0f);
+	glRotatef(-azimuth, 0.0f, 0.0f, 1.0f);
+	
+	//NSLog(@"%f ",altitude);
 }
 
 - (void)doAnimations:(float)timeElapsed {
@@ -200,7 +238,7 @@
 		}
 		
 		tSteps -= (timeElapsed / 0.05);
-		NSLog(@"%f, %f", tSteps, timeElapsed);
+		//NSLog(@"%f, %f", tSteps, timeElapsed);
 		if(tSteps <= 0) {
 			tapZoom = FALSE;
 			tSteps = 0;
@@ -209,25 +247,7 @@
 	
 }
 
-- (void)adjustView {
-	if(usingCompass && [[(SterrenAppDelegate*)[[UIApplication sharedApplication] delegate] location] useCompass]) {
-		if((altitude - altitudeCompass) > 3 || (altitude - altitudeCompass) < -3) {
-			altitude = (altitude + floor(altitudeCompass*100.0 + 0.5)/100.0)/2;
-		}
-		azimuth = -azimuthCompass - 90;
-	}
-	
-	if(altitude > 89.9) { altitude = 89.9; }
-	else if (altitude < -89.9) { altitude = -89.9; }
-	if(azimuth < 0) { azimuth += 360; }
-	if(azimuth > 360) { fmod(azimuth, 360); }
-	
 
-	glRotatef(-altitude, 0.0f, 1.0f, 0.0f);
-	glRotatef(-azimuth, 0.0f, 0.0f, 1.0f);
-	
-	//NSLog(@"%f ",altitude);
-}
 
 - (void)rotateCameraWithX:(int)deltaX Y:(int)deltaY {
 	

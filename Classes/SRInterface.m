@@ -64,7 +64,7 @@
 		
 		iPadWidth = [[theRenderer myOwner] iPadWidth];
 		iPadHeight = [[theRenderer myOwner] iPadHeight];
-		NSLog(@"width %i",iPadWidth);
+
 	}
 	return self;
 }
@@ -1124,7 +1124,7 @@
 	
 	iPadWidth = [[renderer myOwner] iPadWidth];
 	iPadHeight = [[renderer myOwner] iPadHeight];
-	NSLog(@"width %i",iPadWidth);
+
 	
 	if(fieldTmp)
 		[fieldTmp release];
@@ -1328,7 +1328,13 @@
 		}
 		else if (currentlyEditingIdentifier == @"search") {
 			currentlyEditingIdentifier = nil;
-			[[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:aValue dimensions:CGSizeMake(128,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
+            if([aValue isEqualToString:@""]) {
+                [[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:NSLocalizedString(@"Search", @"") dimensions:CGSizeMake(190,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
+            } else {
+                [[UIElements objectAtIndex:[UIElements count] - 2] setTexture:[[Texture2D alloc] initWithString:aValue dimensions:CGSizeMake(190,32) alignment:UITextAlignmentLeft fontName:@"Helvetica-Bold" fontSize:11.0]];
+                
+            }
+			
 			
 			SRMessier * aMessierObject;
 			SRPlanetaryObject* bPlanet; // aPlanet is een ivar
@@ -1584,7 +1590,7 @@
 								else if([greekStrTmp isEqualToString:@"Ome"])
 									greekStr = @"ω";
 								else {
-									NSLog(@"Griekse letter: %@",greekStrTmp);
+									//NSLog(@"Griekse letter: %@",greekStrTmp);
 									greekStr = @"";
 								}
 								//NSString* numberStr = [[foundStar bayer] substringWithRange:NSMakeRange(0, [[foundStar bayer] length] - 6)];
@@ -1647,7 +1653,6 @@
 						
 						//azTmp = foundConstellation.ra;
 						//alTmp = foundConstellation.dec;
-						NSLog(@"Sterrenbeeld resultaat: azTmp:%f alTmp:%f posZ:%f",azTmp,alTmp,posForCam.z);
 						
 					}
 					else if(type == 4) {

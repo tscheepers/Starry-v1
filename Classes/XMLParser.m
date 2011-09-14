@@ -40,17 +40,17 @@
 	
 	if([elementName isEqualToString:@"stars"]) { // Hoofd tag gevonden, Array initializen
 		stars = TRUE;
-		NSLog(@"Start sterren-pars");
+		//NSLog(@"Start sterren-pars");
 		//objectManager.stars = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"constellations"]) {
 		constellations = TRUE;
-		NSLog(@"Start constellations-pars");
+		//NSLog(@"Start constellations-pars");
 		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	else if([elementName isEqualToString:@"messier"]) {
 		messier = TRUE;
-		NSLog(@"Start messier-pars");
+		//NSLog(@"Start messier-pars");
 		//objectManager.constellations = [[NSMutableArray alloc] init];
 	}
 	
