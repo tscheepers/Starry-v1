@@ -43,8 +43,8 @@
 
 		glViewport(0, 0, rect.size.width*[[UIScreen mainScreen] scale], rect.size.height*[[UIScreen mainScreen] scale]);  
 		
-		iPadWidth = view.bounds.size.width;
-		iPadHeight = view.bounds.size.height;
+		iPadWidth = 320;
+		iPadHeight = 480;
 		
 		//NSLog(@"size: %f, width: %f, height:%f", size, rect.size.width, rect.size.height);
 		

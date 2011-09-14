@@ -1128,15 +1128,15 @@
 	
 	if(fieldTmp)
 		[fieldTmp release];
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+	/*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX*320/iPadWidth)+288, (locY*iPadHeight/480)+77
 																 , 200, 32)];
 		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:22]];
 	}
-	else {
+	else {*/
 		fieldTmp = [[UITextField alloc] initWithFrame:CGRectMake((locX-36)*320/iPadWidth, (locY+20)*iPadHeight/480, 80, 32)];
 		[fieldTmp setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11]];	
-	}
+	//}
 	[fieldTmp setTextColor:color];
 	[fieldTmp setTextAlignment:UITextAlignmentLeft];
 	[fieldTmp setDelegate:delegate];
@@ -1157,7 +1157,7 @@
 	// Nu om focus te zetten op dit UI element
 	[fieldTmp becomeFirstResponder];
 	// Nu transleren we de hele glView naar boven om plaats te maken voor het keyboard, met animatie
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	/* if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 	{
 		for (SRInterfaceElement* element in UIElements) {
 			
@@ -1181,12 +1181,12 @@
 		
 	}
 	else
-	{
+	{ */
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
 		[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(160*iPadWidth/320 , 0)];
 		[UIView commitAnimations];
-	}
+	// }
 	
 }
 
@@ -1278,7 +1278,7 @@
 		// Hide de uiElementsView
 		[[appDelegate uiElementsView] setHidden:YES];
 		// Nu transleren we de hele glView weer naar beneden omdat het keyboard weg gaat.
-		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		/*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		{
 			for (SRInterfaceElement* element in UIElements) {
 				
@@ -1302,13 +1302,13 @@
 			
 		}
 		else
-		{
+		{ */
 			[UIView beginAnimations:nil context:NULL];
 			[UIView setAnimationDuration:0.3]; // 0.3 lijkt even snel te zijn als het keyboard.
 			// van 160,0 terug naar 0,0
 			[[appDelegate glView] setTransform:CGAffineTransformMakeTranslation(0 , 0)];
 			[UIView commitAnimations];
-		}
+		//}
 		
 		
 		

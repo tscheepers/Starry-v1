@@ -38,8 +38,8 @@
 	camera = [[SRCamera alloc] initWithView:view];
 	renderer = [[SRRenderer alloc] setupWithOwner:self];
 	
-	iPadWidth = view.bounds.size.width;
-	iPadHeight = view.bounds.size.height;
+	iPadWidth = 320;
+	iPadHeight = 480;
 	
 }
 
@@ -56,8 +56,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *aTouch = [touches anyObject];
 	
-	iPadWidth = theView.bounds.size.width;
-	iPadHeight = theView.bounds.size.height;
+	iPadWidth = 320;
+	iPadHeight = 480;
 	
 	CGPoint relativePoint;
 	relativePoint.x = [aTouch locationInView:theView].x*320/iPadWidth;
@@ -202,9 +202,9 @@
 	
 	//FIXME: Fout in deze berekening voor volledig ingezoomd
 	//if(fieldOfView > 0.75) {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	/*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/4)));
-	else 
+	else */
 		radPerPixel = sinf(0.5*(sqrtf(powf((fieldOfView*iPadHeight)/iPadWidth,2)+powf((fieldOfView*iPadHeight)/iPadWidth,2))))/(iPadWidth+(fieldOfView*(iPadWidth/2)));
 	
 	// Coordinaten in het vlak
@@ -406,12 +406,6 @@
 					[[renderer interface] setANameplate:TRUE];
 					
 					[[[renderer interface] messierInfo] messierClicked:closestMessier];
-					
-					// Screen location test
-					Vertex3D posTmp = [closestMessier myCurrentPosition];
-					// Gaat alleen om de log in de method
-					
-					
 					
 					Vertex3D position = closestMessier.position;
 					
