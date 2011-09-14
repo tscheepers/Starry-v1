@@ -65,11 +65,11 @@
             
             //[self recalculateCompassAdjustment];
             
-            timer = [NSTimer scheduledTimerWithTimeInterval:2.5f 
+            timer = [NSTimer scheduledTimerWithTimeInterval:7.5f 
                                                      target:self 
                                                    selector:@selector(recalculateCompassAdjustment) 
                                                    userInfo:nil 
-                                                    repeats:YES];
+                                                    repeats:NO];
             
 		}
 	}
@@ -78,8 +78,13 @@
 }
 
 - (void)recalculateCompassAdjustment {
+    CMAttitude* attitude = motionManager.deviceMotion.attitude;
     
-    //azimuthCompassAdjustment = adjust;
+    float gyroAzi = (attitude.yaw / M_PI) * 180;
+    
+    float heading = 360 - locationManager.heading.trueHeading;
+    
+    azimuthCompassAdjustment = gyroAzi - heading;
 }
 
 - (void)adjustView {
@@ -87,11 +92,9 @@
         
         CMAttitude* attitude = motionManager.deviceMotion.attitude;
         
-        //float gyroAzi = (attitude.yaw / M_PI) * 180;
+        float gyroAzi = (attitude.yaw / M_PI) * 180;
         
-        float heading = 360 - locationManager.heading.trueHeading;
-        
-        azimuth = heading;
+        azimuth = gyroAzi - azimuthCompassAdjustment;
         
         altitude = ((fabs(attitude.roll / M_PI) * 180) - 90);
         
