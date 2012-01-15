@@ -18,13 +18,20 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		76030C6C10CBBA260074B0CE /* SRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76030C6B10CBBA260074B0CE /* SRSettingsManager.m */; };
+		760C17A714C36B6700EE406D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 760C17A014C36B6600EE406D /* Default.png */; };
+		760C17A814C36B6700EE406D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 760C17A114C36B6700EE406D /* Default@2x.png */; };
+		760C17A914C36B6700EE406D /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 760C17A214C36B6700EE406D /* icon-small.png */; };
+		760C17AA14C36B6700EE406D /* icon-smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 760C17A314C36B6700EE406D /* icon-smaller.png */; };
+		760C17AE14C36BBC00EE406D /* constellations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 760C17AB14C36BBC00EE406D /* constellations.xml */; };
+		760C17AF14C36BBC00EE406D /* database.db in Resources */ = {isa = PBXBuildFile; fileRef = 760C17AC14C36BBC00EE406D /* database.db */; };
+		760C17B014C36BBC00EE406D /* messier.xml in Resources */ = {isa = PBXBuildFile; fileRef = 760C17AD14C36BBC00EE406D /* messier.xml */; };
+		760C17B314C36BEB00EE406D /* SRSQLiteDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 760C17B214C36BEB00EE406D /* SRSQLiteDelegate.m */; };
 		76179CF410CA61D500768180 /* SRObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76179CF310CA61D500768180 /* SRObjectManager.m */; };
 		761B45A510F8A0F90018894A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761B45A410F8A0F90018894A /* CFNetwork.framework */; };
 		761E581010E65B03003B9CFE /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 761E580F10E65B03003B9CFE /* notFound.png */; };
 		7644565110C5837800AB935D /* SRSettingsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7644565010C5837800AB935D /* SRSettingsModule.m */; };
 		765DA28A10A0B19300C4B16A /* SRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 765DA28910A0B19300C4B16A /* SRLocation.m */; };
 		765DA31510A0B97000C4B16A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 765DA31410A0B97000C4B16A /* CoreLocation.framework */; };
-		7675BD27141EA14C003ED668 /* Default@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 7675BD26141EA14C003ED668 /* Default@2X.png */; };
 		7675BD29141EA35F003ED668 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7675BD28141EA35F003ED668 /* CoreMotion.framework */; };
 		767820EC10F10CD3001ADE6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767820EA10F10CD3001ADE6D /* Localizable.strings */; };
 		7695E62310F29F540064FFD9 /* messierBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7695E62210F29F540064FFD9 /* messierBack.png */; };
@@ -34,22 +41,12 @@
 		76B49EC311EDD7C400519896 /* compass_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC111EDD7C400519896 /* compass_off.png */; };
 		76B49EC411EDD7C400519896 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B49EC211EDD7C400519896 /* compass.png */; };
 		76B7CC59108B235100F87C68 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B7CC58108B235100F87C68 /* XMLParser.m */; };
-		76CACC4A14212F6100ACA403 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4814212F6100ACA403 /* icon-small.png */; };
-		76CACC4B14212F6100ACA403 /* icon-smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4914212F6100ACA403 /* icon-smaller.png */; };
-		76CACC4D14212F7000ACA403 /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4C14212F7000ACA403 /* icon-small.png */; };
-		76CACC4F14212F7D00ACA403 /* icon-smaller.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC4E14212F7D00ACA403 /* icon-smaller.png */; };
-		76CACC5114212F9100ACA403 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC5014212F9100ACA403 /* Default@2x.png */; };
-		76CACC5314212F9800ACA403 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76CACC5214212F9800ACA403 /* Default.png */; };
-		76CACC561421351600ACA403 /* IDModuleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CACC551421351600ACA403 /* IDModuleController.m */; };
 		76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7294210EBD8F80018EB62 /* SRStarInfo.m */; };
 		76E6933810FA31BD00924A41 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */; };
-		76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */; };
-		76E6935110FA367100924A41 /* database.db in Resources */ = {isa = PBXBuildFile; fileRef = 76E6935010FA367100924A41 /* database.db */; };
 		76F8DC6F10FF2784004C91EF /* slider_highlighted_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6B10FF2784004C91EF /* slider_highlighted_red.png */; };
 		76F8DC7010FF2784004C91EF /* slider_max_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6C10FF2784004C91EF /* slider_max_red.png */; };
 		76F8DC7110FF2784004C91EF /* slider_min_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6D10FF2784004C91EF /* slider_min_red.png */; };
 		76F8DC7210FF2784004C91EF /* slider_normal_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC6E10FF2784004C91EF /* slider_normal_red.png */; };
-		76F8DC8610FF2AE3004C91EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC8410FF2AE3004C91EF /* Default.png */; };
 		76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8DC8510FF2AE3004C91EF /* defaultTexture.png */; };
 		AC080F5810D97F010078DA4D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F5710D97F010078DA4D /* nav_bg.png */; };
 		AC080F8010D983300078DA4D /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = AC080F7B10D983300078DA4D /* calendar.png */; };
@@ -87,7 +84,6 @@
 		AC55F122109600990021D39C /* SRInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AC55F121109600990021D39C /* SRInterface.m */; };
 		AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57693F10E7CF910031505E /* SRPlanetInfo.m */; };
 		AC5769BB10E7F0D30031505E /* planetInfoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5769B910E7F0D30031505E /* planetInfoBg.png */; };
-		AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */ = {isa = PBXBuildFile; fileRef = AC57BD0D10C957DC00B0BD5C /* constellations.xml */; };
 		AC59B8BA1075075F00ABAE22 /* SRPlanetaryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */; };
 		AC5B2F4A10E6C79500DE922B /* searchNo.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5B2F4810E6C79500DE922B /* searchNo.png */; };
 		AC5B2F4B10E6C79500DE922B /* searchYes.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5B2F4910E6C79500DE922B /* searchYes.png */; };
@@ -247,7 +243,6 @@
 		ACE708D010D02A0B003DE4BB /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE708CF10D02A0B003DE4BB /* M1.png */; };
 		ACEC7CF3109B25A700149C80 /* SRStar.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF0109B25A700149C80 /* SRStar.m */; };
 		ACEC7CF4109B25A700149C80 /* SRSun.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEC7CF2109B25A700149C80 /* SRSun.m */; };
-		ACECC68B10CD997300CBE4AC /* messier.xml in Resources */ = {isa = PBXBuildFile; fileRef = ACECC68A10CD997300CBE4AC /* messier.xml */; };
 		ACECC68E10CD9A8400CBE4AC /* SRMessier.m in Sources */ = {isa = PBXBuildFile; fileRef = ACECC68D10CD9A8400CBE4AC /* SRMessier.m */; };
 		ACECC6C710CDA19600CBE4AC /* messier.png in Resources */ = {isa = PBXBuildFile; fileRef = ACECC6C610CDA19600CBE4AC /* messier.png */; };
 		ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF3D1F910CBE50E002450B6 /* highlight_small.png */; };
@@ -274,6 +269,15 @@
 		32CA4F630368D1EE00C91783 /* Sterren_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sterren_Prefix.pch; path = ../Sterren_Prefix.pch; sourceTree = "<group>"; };
 		76030C6A10CBBA260074B0CE /* SRSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSettingsManager.h; sourceTree = "<group>"; };
 		76030C6B10CBBA260074B0CE /* SRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSettingsManager.m; sourceTree = "<group>"; };
+		760C17A014C36B6600EE406D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		760C17A114C36B6700EE406D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		760C17A214C36B6700EE406D /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "Resources/icon-small.png"; sourceTree = "<group>"; };
+		760C17A314C36B6700EE406D /* icon-smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-smaller.png"; path = "Resources/icon-smaller.png"; sourceTree = "<group>"; };
+		760C17AB14C36BBC00EE406D /* constellations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = constellations.xml; path = Resources/constellations.xml; sourceTree = "<group>"; };
+		760C17AC14C36BBC00EE406D /* database.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.db; path = Resources/database.db; sourceTree = "<group>"; };
+		760C17AD14C36BBC00EE406D /* messier.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = messier.xml; path = Resources/messier.xml; sourceTree = "<group>"; };
+		760C17B114C36BEB00EE406D /* SRSQLiteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSQLiteDelegate.h; sourceTree = "<group>"; };
+		760C17B214C36BEB00EE406D /* SRSQLiteDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSQLiteDelegate.m; sourceTree = "<group>"; };
 		76179CF210CA61D500768180 /* SRObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjectManager.h; sourceTree = "<group>"; };
 		76179CF310CA61D500768180 /* SRObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRObjectManager.m; sourceTree = "<group>"; };
 		761B45A410F8A0F90018894A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -283,7 +287,6 @@
 		765DA28810A0B19300C4B16A /* SRLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRLocation.h; sourceTree = "<group>"; };
 		765DA28910A0B19300C4B16A /* SRLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRLocation.m; sourceTree = "<group>"; };
 		765DA31410A0B97000C4B16A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7675BD26141EA14C003ED668 /* Default@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2X.png"; path = "Resources/Default@2X.png"; sourceTree = "<group>"; };
 		7675BD28141EA35F003ED668 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		767820EB10F10CD3001ADE6D /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		767820EF10F10CEC001ADE6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
@@ -296,25 +299,13 @@
 		76B49EC211EDD7C400519896 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass.png; path = Resources/compass.png; sourceTree = "<group>"; };
 		76B7CC57108B235100F87C68 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		76B7CC58108B235100F87C68 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		76CACC4814212F6100ACA403 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "Resources/icon-small.png"; sourceTree = "<group>"; };
-		76CACC4914212F6100ACA403 /* icon-smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-smaller.png"; path = "Resources/icon-smaller.png"; sourceTree = "<group>"; };
-		76CACC4C14212F7000ACA403 /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
-		76CACC4E14212F7D00ACA403 /* icon-smaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-smaller.png"; sourceTree = "<group>"; };
-		76CACC5014212F9100ACA403 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		76CACC5214212F9800ACA403 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		76CACC541421351600ACA403 /* IDModuleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDModuleController.h; sourceTree = "<group>"; };
-		76CACC551421351600ACA403 /* IDModuleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDModuleController.m; sourceTree = "<group>"; };
 		76D7294110EBD8F80018EB62 /* SRStarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStarInfo.h; sourceTree = "<group>"; };
 		76D7294210EBD8F80018EB62 /* SRStarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStarInfo.m; sourceTree = "<group>"; };
 		76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		76E6933B10FA31E400924A41 /* SRSQLiteDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRSQLiteDelegate.h; path = ../SRSQLiteDelegate.h; sourceTree = "<group>"; };
-		76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRSQLiteDelegate.m; path = ../SRSQLiteDelegate.m; sourceTree = "<group>"; };
-		76E6935010FA367100924A41 /* database.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.db; sourceTree = "<group>"; };
 		76F8DC6B10FF2784004C91EF /* slider_highlighted_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_highlighted_red.png; path = Resources/slider/slider_highlighted_red.png; sourceTree = "<group>"; };
 		76F8DC6C10FF2784004C91EF /* slider_max_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_max_red.png; path = Resources/slider/slider_max_red.png; sourceTree = "<group>"; };
 		76F8DC6D10FF2784004C91EF /* slider_min_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_min_red.png; path = Resources/slider/slider_min_red.png; sourceTree = "<group>"; };
 		76F8DC6E10FF2784004C91EF /* slider_normal_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_normal_red.png; path = Resources/slider/slider_normal_red.png; sourceTree = "<group>"; };
-		76F8DC8410FF2AE3004C91EF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		76F8DC8510FF2AE3004C91EF /* defaultTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultTexture.png; path = Resources/defaultTexture.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sterren-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sterren-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		AC080F5710D97F010078DA4D /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bg.png; path = Resources/nav_bg.png; sourceTree = "<group>"; };
@@ -361,7 +352,6 @@
 		AC57693E10E7CF910031505E /* SRPlanetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetInfo.h; sourceTree = "<group>"; };
 		AC57693F10E7CF910031505E /* SRPlanetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetInfo.m; sourceTree = "<group>"; };
 		AC5769B910E7F0D30031505E /* planetInfoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planetInfoBg.png; path = Resources/planets/planetInfoBg.png; sourceTree = "<group>"; };
-		AC57BD0D10C957DC00B0BD5C /* constellations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = constellations.xml; sourceTree = "<group>"; };
 		AC59B8B81075075F00ABAE22 /* SRPlanetaryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlanetaryObject.h; sourceTree = "<group>"; };
 		AC59B8B91075075F00ABAE22 /* SRPlanetaryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlanetaryObject.m; sourceTree = "<group>"; };
 		AC5B2F4810E6C79500DE922B /* searchNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchNo.png; path = Resources/searchNo.png; sourceTree = "<group>"; };
@@ -534,7 +524,6 @@
 		ACEC7CF0109B25A700149C80 /* SRStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStar.m; sourceTree = "<group>"; };
 		ACEC7CF1109B25A700149C80 /* SRSun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSun.h; sourceTree = "<group>"; };
 		ACEC7CF2109B25A700149C80 /* SRSun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSun.m; sourceTree = "<group>"; };
-		ACECC68A10CD997300CBE4AC /* messier.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = messier.xml; sourceTree = "<group>"; };
 		ACECC68C10CD9A8400CBE4AC /* SRMessier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMessier.h; sourceTree = "<group>"; };
 		ACECC68D10CD9A8400CBE4AC /* SRMessier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMessier.m; sourceTree = "<group>"; };
 		ACECC6C610CDA19600CBE4AC /* messier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = messier.png; path = Resources/messier.png; sourceTree = "<group>"; };
@@ -593,16 +582,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				76CACC5214212F9800ACA403 /* Default.png */,
-				76CACC5014212F9100ACA403 /* Default@2x.png */,
-				76CACC4E14212F7D00ACA403 /* icon-smaller.png */,
-				76CACC4C14212F7000ACA403 /* icon-small.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -610,10 +593,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				76CACC4814212F6100ACA403 /* icon-small.png */,
-				76CACC4914212F6100ACA403 /* icon-smaller.png */,
-				7675BD26141EA14C003ED668 /* Default@2X.png */,
-				76E6935010FA367100924A41 /* database.db */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				760C17A014C36B6600EE406D /* Default.png */,
+				760C17A114C36B6700EE406D /* Default@2x.png */,
+				760C17A214C36B6700EE406D /* icon-small.png */,
+				760C17A314C36B6700EE406D /* icon-smaller.png */,
 				767820EA10F10CD3001ADE6D /* Localizable.strings */,
 				ACB60BED10F67A3000FD2097 /* Slider */,
 				AC5769BD10E7F0DE0031505E /* PlanetBG */,
@@ -637,7 +621,6 @@
 				ACC493A110CD777600DC7967 /* moon.png */,
 				AC8A87ED10C56FCE0015CDF5 /* latitude.png */,
 				769733CC10EF73670057E29F /* starInfoBg.png */,
-				76F8DC8410FF2AE3004C91EF /* Default.png */,
 				76F8DC8510FF2AE3004C91EF /* defaultTexture.png */,
 				AC8AFB7A10F39D3C00517901 /* positionOverlay.png */,
 				AC8A87EE10C56FCE0015CDF5 /* location_off.png */,
@@ -659,8 +642,9 @@
 				AC5B2F4810E6C79500DE922B /* searchNo.png */,
 				AC5B2F4910E6C79500DE922B /* searchYes.png */,
 				ACC380E610DA976D009ED92E /* controls_bg.png */,
-				ACECC68A10CD997300CBE4AC /* messier.xml */,
-				AC57BD0D10C957DC00B0BD5C /* constellations.xml */,
+				760C17AB14C36BBC00EE406D /* constellations.xml */,
+				760C17AC14C36BBC00EE406D /* database.db */,
+				760C17AD14C36BBC00EE406D /* messier.xml */,
 				8D1107310486CEB800E47090 /* Sterren-Info.plist */,
 			);
 			name = Resources;
@@ -669,6 +653,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76E6933710FA31BD00924A41 /* libsqlite3.0.dylib */,
 				7675BD28141EA35F003ED668 /* CoreMotion.framework */,
 				761B45A410F8A0F90018894A /* CFNetwork.framework */,
 				765DA31410A0B97000C4B16A /* CoreLocation.framework */,
@@ -705,12 +690,10 @@
 		AC1BA73710C021D00084CF6F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				76CACC541421351600ACA403 /* IDModuleController.h */,
-				76CACC551421351600ACA403 /* IDModuleController.m */,
-				76E6933B10FA31E400924A41 /* SRSQLiteDelegate.h */,
-				76E6933C10FA31E400924A41 /* SRSQLiteDelegate.m */,
 				76B7CC57108B235100F87C68 /* XMLParser.h */,
 				76B7CC58108B235100F87C68 /* XMLParser.m */,
+				760C17B114C36BEB00EE406D /* SRSQLiteDelegate.h */,
+				760C17B214C36BEB00EE406D /* SRSQLiteDelegate.m */,
 				1D3623240D0F684500981E51 /* SterrenAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SterrenAppDelegate.m */,
 			);
@@ -1076,11 +1059,9 @@
 				AC8A8AC210C5A4750015CDF5 /* brightness_plus.png in Resources */,
 				AC97059410C5B4190048DB59 /* sun.png in Resources */,
 				AC9A924410C6EC0A00657268 /* planet.png in Resources */,
-				AC57BD0E10C957DC00B0BD5C /* constellations.xml in Resources */,
 				ACF3D1FA10CBE50E002450B6 /* highlight_small.png in Resources */,
 				ACB8F19B10CC76F700C0F87E /* location_on.png in Resources */,
 				ACC493A210CD777600DC7967 /* moon.png in Resources */,
-				ACECC68B10CD997300CBE4AC /* messier.xml in Resources */,
 				ACECC6C710CDA19600CBE4AC /* messier.png in Resources */,
 				ACE708D010D02A0B003DE4BB /* M1.png in Resources */,
 				ACF937CA10D7FE56008A4845 /* messierInfoBg.png in Resources */,
@@ -1236,12 +1217,10 @@
 				ACB60BF210F67A3D00FD2097 /* slider_normal.png in Resources */,
 				ACB60BF910F67AFA00FD2097 /* slider_max.png in Resources */,
 				ACB60BFE10F67B2100FD2097 /* slider_min.png in Resources */,
-				76E6935110FA367100924A41 /* database.db in Resources */,
 				76F8DC6F10FF2784004C91EF /* slider_highlighted_red.png in Resources */,
 				76F8DC7010FF2784004C91EF /* slider_max_red.png in Resources */,
 				76F8DC7110FF2784004C91EF /* slider_min_red.png in Resources */,
 				76F8DC7210FF2784004C91EF /* slider_normal_red.png in Resources */,
-				76F8DC8610FF2AE3004C91EF /* Default.png in Resources */,
 				76F8DC8710FF2AE3004C91EF /* defaultTexture.png in Resources */,
 				AC28395B10FF7ADF002DD356 /* indicator_overlay_modules.png in Resources */,
 				AC0DECF311187EA8003101D1 /* starTexture.png in Resources */,
@@ -1253,13 +1232,13 @@
 				AC153B2D117DFA5500377E44 /* star.png in Resources */,
 				76B49EC311EDD7C400519896 /* compass_off.png in Resources */,
 				76B49EC411EDD7C400519896 /* compass.png in Resources */,
-				7675BD27141EA14C003ED668 /* Default@2X.png in Resources */,
-				76CACC4A14212F6100ACA403 /* icon-small.png in Resources */,
-				76CACC4B14212F6100ACA403 /* icon-smaller.png in Resources */,
-				76CACC4D14212F7000ACA403 /* icon-small.png in Resources */,
-				76CACC4F14212F7D00ACA403 /* icon-smaller.png in Resources */,
-				76CACC5114212F9100ACA403 /* Default@2x.png in Resources */,
-				76CACC5314212F9800ACA403 /* Default.png in Resources */,
+				760C17A714C36B6700EE406D /* Default.png in Resources */,
+				760C17A814C36B6700EE406D /* Default@2x.png in Resources */,
+				760C17A914C36B6700EE406D /* icon-small.png in Resources */,
+				760C17AA14C36B6700EE406D /* icon-smaller.png in Resources */,
+				760C17AE14C36BBC00EE406D /* constellations.xml in Resources */,
+				760C17AF14C36BBC00EE406D /* database.db in Resources */,
+				760C17B014C36BBC00EE406D /* messier.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,10 +1280,9 @@
 				AC57694010E7CF910031505E /* SRPlanetInfo.m in Sources */,
 				76D7294310EBD8F80018EB62 /* SRStarInfo.m in Sources */,
 				ACD3BA6A10F50EEC007CD4C7 /* SRListManager.m in Sources */,
-				76E6933D10FA31E400924A41 /* SRSQLiteDelegate.m in Sources */,
 				AC2839B310FF7EE0002DD356 /* SRSunInfo.m in Sources */,
 				AC2839B610FF7EE5002DD356 /* SRMoonInfo.m in Sources */,
-				76CACC561421351600ACA403 /* IDModuleController.m in Sources */,
+				760C17B314C36BEB00EE406D /* SRSQLiteDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

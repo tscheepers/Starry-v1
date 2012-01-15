@@ -1,9 +1,8 @@
 //
-//  SRMessierInfo.h
-//  Sterren
-//
-//  Created by Jan-Willem Buurlage on 09-12-09.
-//  Copyright 2009 Web6.nl Diensten. All rights reserved.
+//  Copyright (c) 2012, Infinite Droplets V.O.F.
+//  All rights reserved.
+//  
+//  Starry was released under the BSD Licence
 //
 
 #import <Foundation/Foundation.h>

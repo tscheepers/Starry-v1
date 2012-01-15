@@ -1,16 +1,9 @@
 //
-//  SterrenAppDelegate.m
+//  Copyright (c) 2012, Infinite Droplets V.O.F.
+//  All rights reserved.
+//  
+//  Starry was released under the BSD Licence
 //
-//  A part of Sterren.app, planetarium iPhone application.
-//  Created by: Jan-Willem Buurlage and Thijs Scheepers
-//  Copyright 2006-2009 Mote of Life. All rights reserved.
-//
-//  Use without premission by Mote of Life is not authorised.
-//
-//  Mote of Life is a registred company at the Dutch Chamber of Commerce.
-//  Chamber of Commerce registration number: 37126951
-//
-
 
 #import "SterrenAppDelegate.h"
 #import "GLView.h"
@@ -18,7 +11,6 @@
 #import "SRObjectManager.h"
 #import "ConstantsAndMacros.h"
 #import "SRLocation.h"
-#import "IDModuleController.h"
 
 @implementation SterrenAppDelegate
 
@@ -26,9 +18,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    NSLog(@"\n #\n #           _        __ _       _ _             _                 _      _       \n #          (_)      / _(_)     (_) |           | |               | |    | |      \n #           _ _ __ | |_ _ _ __  _| |_ ___    __| |_ __ ___  _ __ | | ___| |_ ___ \n #          | | '_ \\|  _| | '_ \\| | __/ _ \\  / _` | '__/ _ \\| '_ \\| |/ _ \\ __/ __|\n #          | | | | | | | | | | | | ||  __/ | (_| | | | (_) | |_) | |  __/ |_\\__ \\ \n #          |_|_| |_|_| |_|_| |_|_|\\__\\___|  \\__,_|_|  \\___/| .__/|_|\\___|\\__|___/\n #                                                          | |                   \n #                                                          |_|  \n # \n # Welkom l337 h4x0r,\n # \n # Dit is Starry door Jan-Willem Buurlage & Infinite Droplets!\n # \n # Zoek je nog een baantje in de buurt van Enschede? http://infinitedroplets.com/werken_bij_id.html\n # \n # Dit is: %@\n # Versie: %@ \n #",
-          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"],
-          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
+    NSLog(@"\n #\n #           _        __ _       _ _             _                 _      _       \n #          (_)      / _(_)     (_) |           | |               | |    | |      \n #           _ _ __ | |_ _ _ __  _| |_ ___    __| |_ __ ___  _ __ | | ___| |_ ___ \n #          | | '_ \\|  _| | '_ \\| | __/ _ \\  / _` | '__/ _ \\| '_ \\| |/ _ \\ __/ __|\n #          | | | | | | | | | | | | ||  __/ | (_| | | | (_) | |_) | |  __/ |_\\__ \\ \n #          |_|_| |_|_| |_|_| |_|_|\\__\\___|  \\__,_|_|  \\___/| .__/|_|\\___|\\__|___/\n #                                                          | |                   \n #                                                          |_|  \n # \n");
 	
 	objectManager = [[SRObjectManager alloc] init];
 	location = [[SRLocation alloc] init];
@@ -39,18 +29,7 @@
 	glView.animationInterval = 1.0 / kRenderingFrequency;
 	[glView startAnimation];
     
-    IDModuleController* touchyController = [[IDModuleController alloc] init];
-    NSURLRequest *request = [touchyController getURLRequestWithForcedDownload:NO];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection release];
-    [touchyController release];
 }
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSMutableString* stringOfData = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"De wolk dondert en bliksemt. (Starry: %@)",stringOfData);
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	glView.animationInterval = 1.0 / kInactiveRenderingFrequency;
